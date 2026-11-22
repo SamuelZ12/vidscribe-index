@@ -66,6 +66,7 @@ def main():
     items = {part: panel(part) for part in ('dev', 'holdout')}
     all_items = items['dev'] + items['holdout']
     summary, points, dates, behavior = {}, {}, {}, {}
+    layout_matches = {}
     versions, statuses, new_statuses = Counter(), Counter(), Counter()
     contexts = 0
     for arm, (name, old) in HISTORY.items():
@@ -73,6 +74,8 @@ def main():
         counts = Counter()
         mixed = []
         example = None
+        old_layouts = {tuple(original_files(arm, i)) for i in items['dev']}
+        layout_matches[arm] = 0
         for part, sample in items.items():
             for item in sample:
                 records = []
@@ -94,12 +97,15 @@ def main():
                         new_statuses[r['status']] += 1
                         if r.get('rollout'):
                             assert r['workspace_files'] == original_files(arm, item)
+                            layout_matches[arm] += tuple(r['workspace_files']) in old_layouts
                             assert rollout_inputs(r) == (r['prompt'], example[1]) == example
                 p = aggregate_item(item, records, key)
                 points[arm][item.item_id] = p
                 if part == 'dev' and old == 1:
                     first, second, third = p['attempts']
                     mixed.append((second + third) / 2 - first)
+        if not layout_matches[arm]:
+            raise ValueError('No historical layout matches a new session for ' + arm)
         summary[arm] = {k: interval([p[k] for p in points[arm].values()]) for k in (*AXES, 'disagree')}
         if mixed:
             dates[arm] = interval(mixed)
@@ -159,7 +165,9 @@ def main():
               '', 'For each setup we compared the new rollout prompts and effective permission profiles to a historical '
               'rollout, normalizing the temporary workspace and CLI paths. Historical sessions did not store input '
               'manifests. We reconstructed their staging rules against each new question’s cached media and checked '
-              'the file list captured immediately before the new session. The outside-read canary preceded collection.',
+              'the file list captured immediately before the new session. Every setup also had at least one '
+              'new file list matching a reconstructed historical dev workspace entry for entry. '
+              'The outside-read canary preceded collection.',
               '', 'These results cover one agent, model and effort, 144 questions, and three attempts. They do not '
               'establish equivalence or generalize to other agents. Intervals are per comparison and do not account '
               'for variability in host preparation times.', '', '## Rebuild', '',
