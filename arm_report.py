@@ -29,6 +29,14 @@ def trace_counts(r):
         output = p.get('output',[])
         # Inspect text blocks only; image payloads can be several MB.
         out = ' '.join(b.get('text','') for b in output if isinstance(b,dict)) if isinstance(output,list) else str(output)
+        viewed = (isinstance(output,list) and any(isinstance(b,dict) and
+                  b.get('type') in ('input_image','image') for b in output))
+        if viewed:
+            for label, pattern in [('map_seen', r'(?:map|overview)_[^ /()]+?\.jpg'),
+                                   ('burst_seen', r'(?:burst|scan)[^ /()]*?\.jpg'),
+                                   ('crop_seen', r'crop[^ /()]*?\.(?:jpg|png)')]:
+                if re.search(pattern,src,re.I):
+                    counts[label]=1
         if 'Watching a video with ffmpeg' in out and 'watch-video' in src:
             counts['guide_returned']=1
         if 'ffmpeg' in src and re.search(r'tile=|tile\\?\s*=',src):
@@ -56,14 +64,15 @@ def table(title,points,comparisons):
                     {'accuracy':1,'seconds':1,'dollars':4}[axis]) for axis in AXES),'|')
 
 def evidence(by_arm):
-    print('\n| Arm | Sessions | With pictures | Image returns | Tiling requested | Dense sampling requested | Crop requested | Guide returned | Errors / timeout / no answer |')
-    print('|---|---:|---:|---:|---:|---:|---:|---:|---|')
+    print('\n| Arm | Sessions | With pictures | Image returns | Tiling requested | Dense sampling requested | Crop requested | Named map / burst / crop viewed | Guide returned | Errors / timeout / no answer |')
+    print('|---|---:|---:|---:|---:|---:|---:|---|---:|---|')
     for arm,rs in by_arm.items():
         total=Counter()
         for r in rs:
             total.update(trace_counts(r))
         statuses=Counter(r['status'] for r in rs)
-        print('|',arm,'|',' | '.join(str(total[k]) for k in ('sessions','seen','images','map_requested','dense_requested','crop_requested','guide_returned')),
+        print('|',arm,'|',' | '.join(str(total[k]) for k in ('sessions','seen','images','map_requested','dense_requested','crop_requested')),
+              '|',' / '.join(str(total[k]) for k in ('map_seen','burst_seen','crop_seen')),'|',total['guide_returned'],
               '|',' / '.join(str(statuses[k]) for k in ('error','timeout','no_answer')),'|')
 
 def short():
