@@ -8,7 +8,7 @@ from statistics import mean, variance
 
 from baseline import RunSet
 from chart import charts
-from media import panel
+from media import cache, panel
 from pilot import ROOT, RUNS, rows, write_json
 from scoring import paired, score
 
@@ -88,6 +88,9 @@ def summarize(spec, sample, key):
                    image_sessions=sum(r['image_returns']>0 for r in records),
                    detail_sessions=sum(bool(r.get('detail_returned')) for r in records),
                    rollouts=sum(bool(r['rollout']) for r in records))
+    if spec.arm != 'stock':
+        prep = [json.loads((cache(i,spec.vidscribe_commit)/'preparation.json').read_text()) for i in sample]
+        summary['preparation_load_1m_range'] = [min(p['load'][0] for p in prep),max(p['load'][0] for p in prep)]
     if summary['dollars']:
         summary['cost_parts']={k:mean(p['cost_parts'][k] for p in data) for k in data[0]['cost_parts']}
         summary['tokens']=mean(p['tokens'] for p in data)
@@ -152,6 +155,9 @@ def output(command, names):
             f'. {s["rollouts"]} rollouts, {s["image_sessions"]} sessions with images, {s["detail_sessions"]} with detail frames.',
             '', f'{s["long_context_sessions"]} sessions exceeded 272K request input. {s["missing_usage"]} missing usage. '+
             ', '.join(f'{k} ${v:.5f}' for k,v in s.get('cost_parts',{}).items())+'.'])
+        if 'preparation_load_1m_range' in s:
+            low, high = s['preparation_load_1m_range']
+            report.extend(['', f'One-minute host load at preparation starts ranged from {low:.2f} to {high:.2f}.'])
         if 'noise_sd' in s:
             report.extend(['',f'Same-code SD for two independent {len(s["attempts"])}-attempt means on this fixed panel '
                             f'is {100*s["noise_sd"]:.2f} percentage points from within-item sample variances. '
@@ -172,6 +178,7 @@ def output(command, names):
              f'API-equivalent dollars use per-request token counts and the {PRICE_DATE} price table. '
              f'Reasoning is included in output. [OpenAI pricing]({SOURCE}).','']
     for name,m in meter.items():
+        report.append(f'One-minute host load at session start: {m["checks"][0]["load"][0]:.2f}. ')
         report.append(f'{name}: account-wide weekly meter {m["before"]["usedPercent"]}% before, '
                       f'{m["checks"][-1]["meter"]["usedPercent"]}% after. Other account activity cannot be attributed.')
     (docs/'baseline-report.md').write_text('\n'.join(report)+'\n')
