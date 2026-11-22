@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 494,
+  "visible_s": [
+   486,
+   530
+  ],
+  "question": "When the speaker says LLMs also have some properties of fabs, which specific compute cluster does the slide cite as an example?",
+  "answer": "xAI Colossus cluster (100K H100 GPUs)",
+  "notes": "Caption at the bottom of the 'LLMs have properties of fabs...' slide: 'e.g. xAI Colossus cluster (100K H100 GPUs)'. Full-screen at 488-520 s, wide shot to ~534 s. The transcript (cues 17-19) mentions only NVIDIA GPUs, TPUs and a 4 nm process node, never xAI, Colossus or H100. Checked with frames extracted at 488/494/520/534 s."
+ },
+ {
+  "qid": "v2",
+  "time_s": 625,
+  "visible_s": [
+   608,
+   645
+  ],
+  "question": "When the speaker shows his sketch of LLMs as a new kind of operating system, which 'Software 1.0 tools' are listed in the box connected to the LLM?",
+  "answer": "Calculator, Python interpreter, Terminal",
+  "notes": "'LLM OS' diagram: the box 'Software 1.0 tools / \"classical computer\"' lists Calculator, Python interpreter, Terminal, .... Other boxes: File system (+embeddings), Browser, Other LLMs, video/audio. Transcript cue 21-22 only says 'all of these capabilities' and names none of these tools. Wide shot at 610 s, full-screen at 625 s, next slide (VS Code) by 650 s."
+ },
+ {
+  "qid": "v3",
+  "time_s": 1284,
+  "visible_s": [
+   1272,
+   1290
+  ],
+  "question": "When the speaker shows Perplexity as another example of a successful LLM app, what search query is visible in the Perplexity screenshot on the slide?",
+  "answer": "meta buys scale ai",
+  "notes": "Slide 'Example: Anatomy of Perplexity'. The screenshot's query is 'meta buys scale ai' and the result is headed 'Meta's $14.8 Billion Investment in Scale AI'. Transcript cue 43 (20:56-21:24) describes Perplexity's features but never mentions Meta or Scale AI. Full-screen at 1276 and 1284 s; replaced by the Photoshop/Unreal slide by 1292 s."
+ },
+ {
+  "qid": "v4",
+  "time_s": 1943,
+  "visible_s": [
+   1938,
+   1962
+  ],
+  "question": "When the speaker explains that writing the code for his vibe-coded MenuGen app was the easy part and making it real was hard, which item on the slide's checklist is marked with a green check mark?",
+  "answer": "Running locally (ez)",
+  "notes": "The slide 'The code was the easiest part! :O' lists LLM API keys, Flux (image generation) API keys, Running locally (ez) [green check], Vercel deployments, Domain names, Authentication, Payments; every other item has a frowning emoji. The transcript (cues 66-67) mentions authentication, payments, domain name and deployment but never 'running locally' or any check mark. Full-screen at 1943 and 1955 s, wide shot at 1950 s; speaker close-up by 1965 s."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 1416,
+  "visible_s": [
+   1410,
+   1428
+  ],
+  "question": "Right after the speaker says 'This is how I feel when I do AI-assisted coding' and apologizes that the slide is not very good, what is the title of the slide being shown?",
+  "answer": "Human+AI UIUX for Coding",
+  "notes": "Needs speech to find the moment (cue 48, about 23:40-23:49: 'This is how I feel when I do AI-assisted coding... the slide is not very good. I'm sorry') and the frame to read the title. The slide shows a worried human holding a many-armed red robot on a leash, beside code screens. The title is never spoken. Seen in a wide shot at 1416 s; at 1404 s the previous workflow slide is still up, and by 1430 s the next slide ('Example: keeping agents on the leash') is shown."
+ },
+ {
+  "qid": "speech",
+  "time_s": 1920,
+  "visible_s": [
+   1900.3,
+   1927.6
+  ],
+  "question": "According to the speaker, how much in free credits does everyone get when they sign up for MenuGen?",
+  "answer": "$5 (five dollars)",
+  "notes": "Transcript cue 65 (31:40-32:07): 'And everyone gets five dollars in credits for free when you sign up.' He then calls it a major cost center and a negative-revenue app."
+ }
+]

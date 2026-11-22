@@ -1,0 +1,32 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 40,
+    "visible_s": [16, 61],
+    "anchor": "Camera shot of the speaker at the lectern with a projected slide behind him showing 'Do Dumb...' and 'Armin @mitsuhiko Ronacher'",
+    "anchor_s": [15, 61],
+    "question": "In the shot of the speaker at the lectern, with a projected slide behind him reading 'Do Dumb...' and 'Armin @mitsuhiko Ronacher', which institution's logo is overlaid in the lower-right corner of the video?",
+    "answer": "Hochschule Burgenland (University of Applied Sciences)",
+    "notes": "Only podium shot with the title slide projected and the only time the logo overlay appears (later podium shots have no overlay). Searched transcript: 'hochschule', 'burgenland', 'university', 'applied', 'logo', 'pycon', 'austria', 'eisenstadt' -> 0 hits. Anchor words 'dumb' first spoken at 4:28 (>60 s away); 'armin', 'ronacher', 'mitsuhiko' never spoken. Speaker says 'the talk title here' at 0:00, so the anchor avoids the word 'title'."
+  },
+  {
+    "qid": "h2",
+    "time_s": 1660,
+    "visible_s": [1615, 1712],
+    "anchor": "Slide titled 'How often does it happen?'",
+    "anchor_s": [1615, 1712],
+    "question": "What is the subtitle of the slide titled 'How often does it happen?'?",
+    "answer": "The More Common The Bigger The Impact",
+    "notes": "Slide also shown briefly at ~1505-1522 s with identical content (same answer). Searched transcript: 'how often' -> only at 45:45 (Q&A, far away); 'happen' near the slide only as 'what happens in an engineer's brain' (27:25), not the title phrase. Answer words: 'impact' 0 hits, 'more common' 0 hits, 'bigger' 1 hit at 28:29 ('the pull request becomes bigger'), unrelated. Bullets on the slide (tests, deploy, PR review, common additions) are spoken, so the question asks only about the subtitle."
+  },
+  {
+    "qid": "h3",
+    "time_s": 2335,
+    "visible_s": [2318, 2358],
+    "anchor": "'Context Managers' code slide that defines a handle_request function",
+    "anchor_s": [2318, 2358],
+    "question": "On the 'Context Managers' code slide that defines a handle_request function, what function is called to obtain the user before entering app_context?",
+    "answer": "get_user_from_session (called with request.session)",
+    "notes": "The other 'Context Managers' slide (subtitle 'Instant Access to Important Data', 36:50-37:30 and 40:30-40:50) has no handle_request, so the anchor is unique. Searched transcript: 'context manager' 0 hits (speaker says 'context variables'/'context vars'), 'handle' 0, 'session' 0, 'get_user' 0, 'dispatch' 0. 'get current user' is spoken (38:17) but that is a different function and not the answer. Subtitle 'Example' avoided as anchor because 'example' is spoken at 37:43 and 38:17."
+  }
+]

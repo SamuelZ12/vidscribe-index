@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 425,
+  "visible_s": [
+   414,
+   450
+  ],
+  "question": "When the speaker explains 'building a fence' around an idea with the example of teaching a Martian what an arch is, what does he physically build the arch out of?",
+  "answer": "White blocks on the table: two upright blocks with one block laid across the top",
+  "notes": "Transcript (cue 14-15, 06:27-07:21) only says 'that's an arch... this is not an arch'; never names the blocks. Verified frames at 418s and 446s: white block arch on the black table."
+ },
+ {
+  "qid": "v2",
+  "time_s": 1540,
+  "visible_s": [
+   1531,
+   1559
+  ],
+  "question": "When the speaker walks far from the screen to demonstrate how not to use slides, the example slide has logos in its two bottom corners. Which organizations' logos are they?",
+  "answer": "MIT (bottom left) and CSAIL (bottom right)",
+  "notes": "Slide titled 'Basic crimes'. Transcript later says 'get rid of the logos' (cue 55) but never names them. Verified at 1539s."
+ },
+ {
+  "qid": "v3",
+  "time_s": 2360,
+  "visible_s": [
+   2355,
+   2390
+  ],
+  "question": "In the map-coloring demo the speaker shows (coloring US states so no neighbors share a color), what date is displayed in the program window's title bar?",
+  "answer": "29-Jan-2015",
+  "notes": "Title bar reads '17:37:09 EST 29-Jan-2015'. Map window shown intermittently between ~2355-2390 s (cut with shots of speaker). Transcript (cues 78-79) mentions no date. Verified at 2360s."
+ },
+ {
+  "qid": "v4",
+  "time_s": 3600,
+  "visible_s": [
+   3568,
+   3650
+  ],
+  "question": "While the speaker plays the clip of Bill Clinton ending his convention keynote, what time is shown in the 'LIVE' graphic in the corner of the broadcast?",
+  "answer": "11:23 pm ET",
+  "notes": "C-SPAN broadcast bug 'LIVE 11:23 pm ET' top-right. Transcript (cues 118-120) does not mention it. Verified at 3600s and in contact sheet at 59:52 and 60:27."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 3345,
+  "visible_s": [
+   3341,
+   3352
+  ],
+  "question": "The speaker shows a final-slide example that he says lists 'perfectly legitimate conclusions that nobody cares about'. What does the first bullet on that slide say?",
+  "answer": "Newton noted that F = ma.",
+  "notes": "Speech locates the moment (cue 110, 55:27-55:53); bullet text is only on screen (slide 'Conclusions', bullets 'Newton noted that F = ma.', 'Cold fusion would be nice.', '...'). Verified by 1 fps strip 3330-3354."
+ },
+ {
+  "qid": "speech",
+  "time_s": 1195,
+  "visible_s": [
+   1190.8,
+   1220.8
+  ],
+  "question": "In the bicycle-wheel demonstration, what does the speaker put around part of the wheel so you can think about just one small piece of it?",
+  "answer": "Duct tape",
+  "notes": "Cue 41 (19:50.8-20:20.8): 'You take some duct tape and you put it around part of the wheel'. visible_s is the cue span."
+ }
+]

@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 1304,
+  "visible_s": [
+   1301,
+   1309
+  ],
+  "question": "When Sundar shows an example photo that Gemini identifies as captured with a Pixel camera and then edited with Google Photos, what does that photo show?",
+  "answer": "A gray cat wearing bunny ears (lying in a pet bed)",
+  "notes": "Visual-only: transcript cue 44 (21:40-22:15) only says 'this photo was captured with a pixel camera, and then edited with Google Photos'; subject never named. Verified full-res frame at 1304 s; image on screen ~1301-1309 s (sheet tiles at 2 s spacing)."
+ },
+ {
+  "qid": "v2",
+  "time_s": 2935,
+  "visible_s": [
+   2931,
+   2942
+  ],
+  "question": "In the Search information-agent demo about tracking big biotech stocks with P/E under 15, which company is the first trigger shown on screen monitoring?",
+  "answer": "BioNTech (BioNTech SE)",
+  "notes": "Visual-only: transcript (48:25-49:22) mentions only 'big biotech stocks', PE under 15, triggers; no company named. Screen 'Triggers' panel item 1: 'Monitoring BioNTech SE (BTNX) for a 50% daily volume/volatility spike (P/E < 15)'; item 2 monitors Bloomberg. Verified at 2935 s; panel visible ~2931-2942 s (1 fps tile)."
+ },
+ {
+  "qid": "v3",
+  "time_s": 3858,
+  "visible_s": [
+   3840,
+   3868
+  ],
+  "question": "In the Universal Cart example about building your first custom PC, which motherboard (brand and model) was added to the cart?",
+  "answer": "ASUS TUF Gaming Z790-Plus WIFI",
+  "notes": "Visual-only: transcript (1:03:43-1:04:43) says only 'a motherboard with great reviews' and that the processor needs a different socket. Product page ~3840-3845 s, then cart listing under Best Buy ($249.99) with warning 'The Ryzen 7 CPU requires a motherboard with an AM5 socket' ~3853-3868 s. Verified full-res frame at 3858 s."
+ },
+ {
+  "qid": "v4",
+  "time_s": 5180,
+  "visible_s": [
+   5178,
+   5201
+  ],
+  "question": "In the Stitch demo for the pizza company owned by Tyler and Jenny, what is the pizza company's name shown on the generated website?",
+  "answer": "Willamette Pizza Co.",
+  "notes": "Visual-only: transcript (1:25:37-1:26:38) says only 'My friends Tyler and Jenny own a pizza company'; name never spoken. Name appears in the Stitch prompt (~5165 s) and as the site header/hero 'WILLAMETTE PIZZA CO.' ~5178-5201 s. Verified frames 5170, 5180 and 1 fps tiles."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 1450,
+  "visible_s": [
+   1437,
+   1454
+  ],
+  "question": "Sundar compares Gemini 3.5 Flash to 3.1 Pro on three benchmarks and singles out one that captures real-world, economically valuable tasks. What score does Gemini 3.5 Flash get on that benchmark?",
+  "answer": "1656 (GDPval-AA Elo; vs 1314 for Gemini 3.1 Pro)",
+  "notes": "Speech identifies which benchmark (cue 48, 23:40-24:12: 'extraordinary jump in GDPVal, a benchmark that captures many real-world economically valuable tasks'); the score is only on the slide 'Gemini 3.1 Pro vs Gemini 3.5 Flash', middle panel 'Real-World Agentic / GDPval-AA Elo': 1314 vs 1656 (other panels: Coding, Scaled Tool Use). Numbers never spoken. Slide visible ~1437-1454 s, GDPval panel highlighted ~1446-1452 s. Verified frame 1452."
+ },
+ {
+  "qid": "speech",
+  "time_s": 1700,
+  "visible_s": [
+   1688,
+   1717
+  ],
+  "question": "When the Antigravity team had agents build an operating system from scratch with Gemini 3.5 Flash, how many sub-agents worked in parallel?",
+  "answer": "93",
+  "notes": "Transcript cue 57 (28:08-28:37): 'Over 12 hours, 93 sub-agents working in parallel made over 15,000 model requests and processed 2.6 billion tokens'."
+ }
+]

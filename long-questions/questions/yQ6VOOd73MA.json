@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 491,
+  "visible_s": [
+   489,
+   494
+  ],
+  "question": "In the segment on everyday decisions our unconscious makes for us, a researcher in a blue T-shirt and glasses says 'thank God we don't have to be aware of all that stuff' about digestion. What institution is listed under her name in the on-screen caption?",
+  "answer": "MIT McGovern Institute",
+  "notes": "Lower-third caption 'NANCY KANWISHER, PhD / MIT McGOVERN INSTITUTE' visible ~489.5-494 s (checked 2 s strip). Short clip transcription confirmed she says the digestion line + 'thank God...'. Neither her name nor MIT/McGovern appears anywhere in the transcript."
+ },
+ {
+  "qid": "v2",
+  "time_s": 1115,
+  "visible_s": [
+   1071,
+   1240
+  ],
+  "question": "During his interviews about split-brain research, what object sits on the table in front of Michael Gazzaniga?",
+  "answer": "A model of a (human) brain",
+  "notes": "Caption 'MICHAEL GAZZANIGA, PhD / University of California, Santa Barbara' at ~1071-1074 s; a brain model on a white stand is on the table in every shot of his interview (e.g. 1071, 1090, 1115, 1145, 1204, 1234 s), each several seconds long. Transcript never mentions a brain model."
+ },
+ {
+  "qid": "v3",
+  "time_s": 2223,
+  "visible_s": [
+   2222,
+   2225
+  ],
+  "question": "Before Heather sits down, Uri Maoz pulls a card out of an envelope and says 'let's see what this says.' What is printed on that card?",
+  "answer": "\"You will choose to sit here\"",
+  "notes": "Card held up at ~2222.5-2225 s (0.75 s strip) reads 'YOU WILL CHOOSE TO SIT HERE'. Transcript only has 'What this says. Oh my God.' (cue 74). A second card at ~2234.5-2236 s reads 'YOU WILL CHOOSE NOT TO SIT HERE' (also not read aloud)."
+ },
+ {
+  "qid": "v4",
+  "time_s": 2753,
+  "visible_s": [
+   2745,
+   2758
+  ],
+  "question": "When the neuroscientist who studies creativity is introduced, talking about playing the blues as a launchpad for improvisation, what musical instrument is he shown holding and playing?",
+  "answer": "Saxophone",
+  "notes": "Charles Limb stands in a park holding a saxophone (wide shots ~2743-2751 s), then close-ups of him fingering/playing a gold saxophone ~2751-2758 s; his caption follows at ~2759 s. Transcript cue 91 mentions 'playing the blues' but never names an instrument."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 966,
+  "visible_s": [
+   964,
+   969
+  ],
+  "question": "In Michael Miller's two-handed drawing test, Heather is told to draw the shape on the left side of the screen with her left hand. What shape was that?",
+  "answer": "A square",
+  "notes": "Speech (cue 32, ~944-971 s) gives the rule: left-side shape with left hand, right-side shape with right hand, but never names the shapes. Screen at ~964.5-969 s shows a square on the left, a dot in the centre, and a circle on the right. Needs both: speech for which side, frame for the shape."
+ },
+ {
+  "qid": "speech",
+  "time_s": 1940,
+  "visible_s": [
+   1925,
+   1981
+  ],
+  "question": "In Bianca Jones-Marlin's mouse experiments, which smell was paired with a mild electric foot shock?",
+  "answer": "Almond",
+  "notes": "Cue 64 (1925-1953 s): 'Bianca paired the smell of almond with an electric shock'; repeated in cue 65 (almond receptor). Transcript alone answers it."
+ }
+]

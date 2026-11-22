@@ -13,11 +13,11 @@ from arms import arms, checkpoint, read
 from baseline import clean
 from bounds import VIDSCRIBE, environment, options
 from media import cache, prepare
-from pilot import DATA, RUNS, Item, SEED, write_json
+from pilot import DATA, ROOT, RUNS, Item, SEED, write_json
 from results import price
 from statistics import mean
 
-EVAL = VIDSCRIBE/'eval'
+EVAL = ROOT/'long-questions'
 SRC = DATA/'long-src'
 VIDEOS = re.findall(r'^\| `([\w-]{11})` \| [^|]+ \| (dev|holdout) \|$', (EVAL/'README.md').read_text(), re.M)
 assert len(VIDEOS) == 12

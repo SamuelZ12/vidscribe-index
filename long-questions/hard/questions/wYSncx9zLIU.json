@@ -1,0 +1,50 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 35,
+    "visible_s": [
+      32.75,
+      36.5
+    ],
+    "anchor": "Opening montage shot of two men at a laptop where a prompt is typed: 'Create a photoshoot for my coffee brand', followed by the generated coffee-bag product shots",
+    "anchor_s": [
+      31,
+      36.5
+    ],
+    "question": "In the shot where someone types the prompt 'Create a photoshoot for my coffee brand', what brand name is printed on the coffee bags?",
+    "answer": "BLK & Bold",
+    "notes": "Searched 'coffee', 'photoshoot', 'photo shoot', 'brand', 'BLK', 'black', 'specialty', 'Rise & Grnd': none in the first 30 min ('coffee' first appears at ~1:39, the glasses cold-brew demo). The speech over the shot (0:26-0:55) is abstract sizzle narration (potential, coding, educator, 'menus to marketing') and names no coffee, prompt or brand. The only 'bold' in the transcript is the ordinary phrase 'bold enough to say' at 0:00-0:26, unrelated to the brand. Brand on the bag thumbnail in the prompt box 32.75-34.25 s and on the full product shots 34.25-36.5 s; the shot appears nowhere else. Position hint 'In the opening montage' removed from the question at validation (rule: no position hints)."
+  },
+  {
+    "qid": "h2",
+    "time_s": 3490,
+    "visible_s": [
+      3481,
+      3497
+    ],
+    "anchor": "Slide with a 'Fitness & Meal Tracker' app window greeting 'Good morning, Camille' (next to the 'Antigravity in Search' title)",
+    "anchor_s": [
+      3481,
+      3497
+    ],
+    "question": "On the slide showing a 'Fitness & Meal Tracker' app that greets 'Good morning, Camille', what time is listed for the Yoga Flow class?",
+    "answer": "12:15 PM",
+    "notes": "Searched 'fitness', 'meal', 'tracker', 'Camille', 'yoga', 'flow', '12:15', 'twelve': 'trackers' only spoken at ~54:00 (>3 min earlier, generic); 'twelve' only at line 263 (Antigravity speed). Camille never spoken; the 'Hi Camille' Gemini phone at 70:50 is a different screen. Anchor deliberately avoids the 'Antigravity in Search' title, which is spoken at 57:58."
+  },
+  {
+    "qid": "h3",
+    "time_s": 6252,
+    "visible_s": [
+      6250,
+      6255
+    ],
+    "anchor": "Shot of a wooden trail signpost in a forest with the caption 'Most of the destinations on this signpost have both German and Italian names'",
+    "anchor_s": [
+      6250,
+      6255
+    ],
+    "question": "In the shot of a wooden trail signpost in a forest (captioned about its destinations having German and Italian names), what trail number is painted on the arrow tips?",
+    "answer": "35A",
+    "notes": "Searched 'sign', 'signpost', 'trail', 'hike', 'German', 'Italian', 'alm', 'Malga', 'Gampen', 'Kaserill', '35', 'thirty': none relevant (only 'hike' at 1:39 about Redwood Grove, unrelated, >5 min away). Speech at 1:44:13 is about glasses arriving this fall. Signpost also appears as a small thumbnail in the following collage (6255-6260) with the same answer; nowhere else."
+  }
+]

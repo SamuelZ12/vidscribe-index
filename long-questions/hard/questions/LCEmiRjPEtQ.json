@@ -1,0 +1,50 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 720,
+    "visible_s": [
+      709,
+      730
+    ],
+    "anchor": "Slide with two social-media posts side by side; the left photo shows a llama cut-out next to a stack of silver computer boxes with cables",
+    "anchor_s": [
+      709,
+      730
+    ],
+    "question": "On the slide with two social-media posts side by side, where the left post's photo shows a llama standing next to a stack of silver computer boxes, what total unified memory does the right-hand post report?",
+    "answer": "496GB",
+    "notes": "Right-hand post (Guillermo Flor): 'Running DeepSeek R1 across my 7 M4 Pro Mac Minis and 1 M4 Max MacBook Pro. Total unified memory = 496GB.' Searched transcript for 496, four hundred, unified, linkedin, guillermo, exo, seven, alpaca: no matches. 'Llama' is spoken only at 9:25-9:55 (Llama ecosystem), over 110 s before the slide appears; anchor avoids the spoken 'Mac Minis' and the slide title 'Personal Computing'. Not guessable: a specific number from a personal hobbyist post, not a known spec. Slide full-screen 708.8-730.5 s (scene cuts)."
+  },
+  {
+    "qid": "h2",
+    "time_s": 1295,
+    "visible_s": [
+      1288,
+      1302
+    ],
+    "anchor": "Slide with two software screenshots: a portrait of a woman in a patterned headwrap against an orange circle, and a 3D scene of two orange chairs around a round table",
+    "anchor_s": [
+      1288,
+      1302
+    ],
+    "question": "On the slide showing a portrait of a woman in a patterned headwrap against a large orange circle next to a 3D editor scene of two orange chairs at a round table, what software is the 3D-scene screenshot labeled as?",
+    "answer": "Unreal Engine",
+    "notes": "Searched transcript for unreal, engine, chair, orange, portrait, woman, headwrap, 3d, editor: no matches. Speech nearby mentions Photoshop (~21:55) but never Unreal; anchor avoids naming Photoshop or the slide title. Slide on screen 1287.7-1302.1 s (scene cuts)."
+  },
+  {
+    "qid": "h3",
+    "time_s": 2265,
+    "visible_s": [
+      2253,
+      2280
+    ],
+    "anchor": "Slide showing a product-announcement web page screenshot with a black keyboard and mouse pictured beneath it",
+    "anchor_s": [
+      2253,
+      2280
+    ],
+    "question": "On the slide with a black keyboard and mouse pictured beneath a screenshot of a product announcement, which website is the AI agent in the screenshot using?",
+    "answer": "Tripadvisor",
+    "notes": "Slide is OpenAI's 'Introducing Operator' page. Searched transcript for tripadvisor, rome, colosseum, tour, book, operator, keyboard, mouse, announc: no matches (speech only says LLMs will 'go around and click stuff'). Accept answer if it names Tripadvisor; Rome tour is the supporting detail. Slide on screen 2252.4-2280.4 s. Narrowed to one fact (website) after pilot review; the Rome-tour detail was dropped so the grader does not need the notes."
+  }
+]

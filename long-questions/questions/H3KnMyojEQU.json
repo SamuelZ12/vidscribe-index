@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 697,
+  "visible_s": [
+   691,
+   699
+  ],
+  "question": "When the presenter says you can track gym workouts from developers like Ladder, an iPhone workout screen is shown next to AirPods Pro. What exercise is listed for the current set (Set 2 of 3)?",
+  "answer": "Alternating bicep curl (8x Bicep Curl • Alternating, 30 lbs)",
+  "notes": "On-screen card reads 'Set 2 of 3 / 8x Bicep Curl • Alternating / 30 lbs'. Transcript cue 11:09-11:42 only mentions Ladder and gym workouts, never the exercise. Verified with 1 fps frames 684-701 s and full-res frame at 699 s."
+ },
+ {
+  "qid": "v2",
+  "time_s": 1458,
+  "visible_s": [
+   1455,
+   1462
+  ],
+  "question": "When the presenter says Apple Watch SE 3 can play music or podcasts directly through its speaker, what song (and artist) is shown playing on the watch?",
+  "answer": "\"Kneel\" by Nilüfer Yanya",
+  "notes": "Watch Now Playing screen shows 'Kneel' / 'Nilüfer Yanya'. Transcript cue 24:14-24:42 says only 'play media like music or podcasts directly through the speaker'. Verified with 1 fps frames 1453-1464 s and full-res frame at 1458 s."
+ },
+ {
+  "qid": "v3",
+  "time_s": 2697,
+  "visible_s": [
+   2695,
+   2703
+  ],
+  "question": "What job title is shown on screen for the presenter who explains the A19 Pro chip for iPhone Air?",
+  "answer": "VP, Platform Architecture (Tim Millet)",
+  "notes": "Lower third reads 'Tim Millet / VP, Platform Architecture'. Transcript only says 'here's Tim Melan' (misspelled) and never gives his title. Verified with 1 fps frames 2693-2704 s and full-res frame at 2697 s."
+ },
+ {
+  "qid": "v4",
+  "time_s": 4296,
+  "visible_s": [
+   4294,
+   4300
+  ],
+  "question": "After Tim Cook thanks everyone for joining, an end card with the Apple logo appears. What text is written under the logo?",
+  "answer": "Shot on iPhone. Edited on Mac.",
+  "notes": "End card text under the Apple logo. Transcript ends with 'Thank you very much for joining us. Have a great day.' / 'Okay.'; the line is never spoken ('Edited on Mac' appears nowhere in the transcript). Verified with 1 fps frames 4284-4315 s and full-res frame at 4296 s."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 1550,
+  "visible_s": [
+   1535,
+   1640
+  ],
+  "question": "One presenter stands outdoors in golden, grassy hills. Which product does he introduce, and how many hours of battery life does he say it gets?",
+  "answer": "Apple Watch Ultra 3; up to 42 hours",
+  "notes": "Visual: Eugene Kim (lower third 'VP Hardware Engineering') presents in dry grassy hills, intermittently 1535-1640 s and on through the Ultra section (tiles at 25:38, 26:18, 26:58). Speech: 'here's Eugene... Apple Watch Ultra 3' (25:14-26:17) and 'up to 42 hours of battery life' (27:21-27:53). The hills setting is never mentioned in speech, so finding the presenter needs the frames, and the product and battery life need the transcript."
+ },
+ {
+  "qid": "speech",
+  "time_s": 3160,
+  "visible_s": [
+   3147.7,
+   3173.2
+  ],
+  "question": "To illustrate iPhone Air's 40 hours of video playback with the new MagSafe battery, the presenter says you could binge every episode of which TV show?",
+  "answer": "For All Mankind (all 40 episodes)",
+  "notes": "Transcript cue 52:27.7-52:53.2: 'That's enough to binge on all 40 episodes of For All Mankind'."
+ }
+]

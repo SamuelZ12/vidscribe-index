@@ -1,0 +1,50 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 931,
+    "visible_s": [
+      928,
+      936.5
+    ],
+    "anchor": "Grainy, washed-out archival video footage of a pair of hands above a wooden tabletop, with a date stamp burned into the bottom of the picture",
+    "anchor_s": [
+      928,
+      936.5
+    ],
+    "question": "In the grainy archival video clip of a pair of hands above a wooden tabletop that carries a date stamp at the bottom of the picture, what date does the stamp show?",
+    "answer": "Sep. 25, 1983",
+    "notes": "Searched transcript for 1983, eighty, september/sept, twenty-five, date, tape, video, home, wood: none present. Speech at this point is about the corpus callosum and 'make me the AOK sign'; the anchor avoids the OK gesture and uses only the visual footage and date stamp. No other archival clip (e.g. the split-brain patient footage at ~20:00-22:10) shows a date stamp."
+  },
+  {
+    "qid": "h2",
+    "time_s": 1461,
+    "visible_s": [
+      1459,
+      1463
+    ],
+    "anchor": "Name caption on the man with glasses, navy blazer and light-blue shirt interviewed in front of wooden bookshelves (lower-third caption reading 'LUKE CHANG, PhD')",
+    "anchor_s": [
+      1459,
+      1463
+    ],
+    "question": "When the man in glasses and a navy blazer, interviewed in front of wooden bookshelves, first gets his on-screen name caption, what institution does the caption list under his name?",
+    "answer": "Dartmouth",
+    "notes": "Searched transcript for Dartmouth, college, university, school: only 'Icon School of Medicine at Mount Sinai' (5:01, a different person). The narrator says 'Neuroscientist Luke Chang' at ~24:27 but never his affiliation; the anchor uses only his appearance (bookshelves, blazer), not his name. 'bookshelves'/'blazer' not spoken. He reappears in this setting without a caption; the caption shows only once."
+  },
+  {
+    "qid": "h3",
+    "time_s": 3029.5,
+    "visible_s": [
+      3027,
+      3031.5
+    ],
+    "anchor": "Close-up of a watch/clock movement (gears and plates) with animated glowing brain regions overlaid and labeled 'temporal lobe', 'occipital lobe', 'parietal lobe'",
+    "anchor_s": [
+      3016,
+      3031.5
+    ],
+    "question": "In the close-up of a clockwork movement with animated brain regions overlaid on it, labeled with lobe names such as 'parietal lobe', what number is stamped on the metal plate of the movement?",
+    "answer": "0898",
+    "notes": "Searched transcript for lobe, parietal, occipital, temporal, cerebellum, clock/clockwork, gear, watch, 0898, 'eight ninety-eight', 'ninety-eight': none spoken within 60 s (the only 'clockwork' is at ~8:27, ~42 min earlier, with no clock shot on screen then). Speech here is generic ('a complicated collection of these intricate parts... delicate dance'). The stamped serial-like number is an arbitrary detail of stock footage, so no field knowledge, title, or person recognition can supply it. Only clockwork shot in the video per contact sheets."
+  }
+]

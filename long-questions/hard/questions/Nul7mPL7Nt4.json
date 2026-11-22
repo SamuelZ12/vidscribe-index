@@ -1,0 +1,50 @@
+[
+ {
+  "qid": "h1",
+  "time_s": 1490.5,
+  "visible_s": [
+   1489,
+   1491.8
+  ],
+  "anchor": "Lower-third name caption 'Hannah Trott' over the presenter in a cream blazer",
+  "anchor_s": [
+   1489,
+   1491.8
+  ],
+  "question": "In the shot where the presenter's name caption reads 'Hannah Trott', what job title or team is shown under her name?",
+  "answer": "Channel Marketing",
+  "notes": "Searched transcript for Hannah, Trott, channel, marketing: none occur (she is never introduced by name in speech). Caption fades in ~24:49 and is gone by 24:52, so on screen only ~3 s. Name caption appears once."
+ },
+ {
+  "qid": "h2",
+  "time_s": 2876,
+  "visible_s": [
+   2874.8,
+   2877.6
+  ],
+  "anchor": "Close-up of a hand holding a flip phone whose screen shows a text message beginning 'Congratulations'",
+  "anchor_s": [
+   2874.8,
+   2877.6
+  ],
+  "question": "In the close-up of a hand holding a flip phone with a text message that begins 'Congratulations', what sender name is shown at the top of the conversation?",
+  "answer": "TW Production",
+  "notes": "Shot is inside a scripted ad (47:14-48:31) whose speech is only dialogue: 'You spend so long imagining something. Funny, I thought I missed my chance. I got it. What?' then 'I think you've got the brief already... full dress rehearsal in ten minutes'. No product names, no mention of a text or message. Searched for congrat, TW, production, callback, audition, invite, message: the only 'Congratulations' is at 75:17 (Qualcomm CEO), 28 min away; none of the others occur near here. The message reads 'Congratulations, We'd like to invite you to a callback audition.' Shot runs 2874.8-2877.6 by scene detection (~2.8 s). The message screen appears once."
+ },
+ {
+  "qid": "h3",
+  "time_s": 4188,
+  "visible_s": [
+   4184.5,
+   4192
+  ],
+  "anchor": "Alley street scene with outdoor caf\u00e9 tables and a round hanging sign reading 'RaFi'",
+  "anchor_s": [
+   4182,
+   4192.5
+  ],
+  "question": "In the shot of a narrow alley with outdoor caf\u00e9 tables and a round hanging sign reading 'RaFi', how many people is the on-screen request asking to book a table for?",
+  "answer": "3",
+  "notes": "Speech nearby (69:22-69:56) only says 'book a reservation at a restaurant you just passed by'; no party size. Searched for RaFi, alley, table, three, 3, tomorrow night: 'three' only appears at 26:29 ('three by four') and 74:51 ('three companies'). Sign text not spoken. Overlay text 'Can you book me a table for 3 at this restaurant for tomorrow night?' is on screen ~8 s."
+ }
+]

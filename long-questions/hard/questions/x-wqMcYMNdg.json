@@ -1,0 +1,32 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 910,
+    "visible_s": [907.75, 911.0],
+    "anchor": "Phone screen (dark background, QR code in corner) showing a news app's list of articles about the D.C. National Guard shooting suspect",
+    "anchor_s": [907.0, 911.0],
+    "question": "On the phone screen showing a news app's list of articles about the D.C. National Guard shooting suspect, how many sources does the list say it includes?",
+    "answer": "18 (\"18 Sources\")",
+    "notes": "Searched transcript for: national guard, shooting, breitbart, CIA, afghan, full coverage, sources, eighteen, 18. None spoken (the Ground News ad read mentions 'coverage' and 'news sources' factuality' generically but never the story, the outlets, or a count; only number nearby is 'forty percent off'). '18 Sources' sits under 'Sort: Suggested' on the Full Coverage page across the CBS News and Breitbart cards, ~3 s total."
+  },
+  {
+    "qid": "h2",
+    "time_s": 3228,
+    "visible_s": [3226.0, 3230.5],
+    "anchor": "Lower-third caption reading 'KATHRYN ANNE EDWARDS / Economist & Host, Optimist Economy'",
+    "anchor_s": [3226.0, 3230.5],
+    "question": "While the guest's lower-third name caption ('Economist & Host, Optimist Economy') is on screen, whose author name is printed on the yellow book lying flat on the upper-left shelf behind her?",
+    "answer": "Sally Rooney (the book is 'Intermezzo')",
+    "notes": "Caption shows only ~53:46-53:50. Transcript blocks 52:09-55:06 contain no 'Catherine', 'Edwards', 'economist' or 'Optimist' (Optimist Economy is spoken only at ~3:30, ~71:30 and ~75:20, all >60 s away). Searched for rooney, sally, intermezzo, book, shelf: none spoken. The book is visible in all her solo shots with the same answer."
+  },
+  {
+    "qid": "h3",
+    "time_s": 4750,
+    "visible_s": [4747.0, 4756.0],
+    "anchor": "Shot of the blonde woman in a black cardigan wearing headphones, in front of a wooden wall shelf of books with a trailing plant and a framed poster",
+    "anchor_s": [4747.0, 4756.0],
+    "question": "In the shot of the blonde woman in a black cardigan sitting in front of a wooden wall shelf of books with a trailing plant, what is the title on the black book spine with white lettering just left of the vase of dried flowers?",
+    "answer": "Dark Money (Jane Mayer)",
+    "notes": "Searched transcript for: dark, money (only generic 'money' in other contexts, never 'dark money'), mayer, book, shelf, plant, cardigan: none spoken. Producer segment is talk about the guest/golf/daylight saving; her room is never described. Same shelf appears in her later shots (~83:10, 87:10) with the same answer."
+  }
+]

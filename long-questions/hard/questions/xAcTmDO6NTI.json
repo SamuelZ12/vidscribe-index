@@ -1,0 +1,50 @@
+[
+ {
+  "qid": "h1",
+  "time_s": 130,
+  "visible_s": [
+   124,
+   140
+  ],
+  "anchor": "Course-website screenshot (green 6.100L navigation bar with Help dropdown open) on the slide titled 'SUCCEEDING in this CLASS'",
+  "anchor_s": [
+   124,
+   140
+  ],
+  "question": "In the course-website screenshot on the slide titled 'SUCCEEDING in this CLASS', what course number appears in the 'About ...' menu of the green navigation bar?",
+  "answer": "6.S061",
+  "notes": "Searched s061, 's zero six one', 'six one', website, forum, help queue, scores, MITx, succeed: none spoken (only 'help' in unrelated senses and 'six one hundred L' at 0:00). Speech at 1:55-2:27 is about practice and participation, never the website. 6.S061 is a temporary course number not inferable from the title (6.100L), the lecturer, or general knowledge; the screenshot appears only on this slide."
+ },
+ {
+  "qid": "h2",
+  "time_s": 1290,
+  "visible_s": [
+   1284,
+   1300
+  ],
+  "anchor": "Spyder IDE console pane showing the Python/IPython startup banner",
+  "anchor_s": [
+   1284,
+   1300
+  ],
+  "question": "In the Spyder console's startup banner, what IPython version number is shown?",
+  "answer": "7.20.0",
+  "notes": "Searched ipython, version, spyder, anaconda, banner, 7.20, seven: only unrelated 'seven' (memory addresses, 7.9) and 'version' (course/float version). Banner also visible again ~25:50-26:20 with same answer."
+ },
+ {
+  "qid": "h3",
+  "time_s": 3590,
+  "visible_s": [
+   3572,
+   3600
+  ],
+  "anchor": "Spyder IPython console showing the traceback \"NameError: name 'x' is not defined\"",
+  "anchor_s": [
+   3572,
+   3610
+  ],
+  "question": "In the Spyder console, which input prompt number (the n in In [n]) produced the error \"NameError: name 'x' is not defined\"?",
+  "answer": "25",
+  "notes": "Searched error, not defined, traceback, NameError, undefined, 25, twenty-five: 'error' is spoken only at ~18-19 min (error types) and ~57:30 ('the code here is buggy... has an error'), both more than 60 s away and about different things; '25' appears only as an SRT cue index. Speech at 59:08-59:40 is about writing the swap code (x equals one, y equals two), not the error. The only other NameError (~27:50, name 'true') names a different variable, so the anchor is unique."
+ }
+]

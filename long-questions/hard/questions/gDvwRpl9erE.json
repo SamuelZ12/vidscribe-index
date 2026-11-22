@@ -1,0 +1,50 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 532,
+    "visible_s": [
+      528,
+      546
+    ],
+    "anchor": "Screenshot of a tweet with a red-and-blue line chart titled 'Python 2 and 3' (dates 1/1/2013 to 7/1/2016 on the x-axis)",
+    "anchor_s": [
+      528,
+      546
+    ],
+    "question": "In the screenshot of a tweet containing a red-and-blue line chart titled 'Python 2 and 3', by what year and month does the tweet say Python 3 outgrows Python 2?",
+    "answer": "December 2017 (written '2017-12')",
+    "notes": "Tweet text: '#Python 3: 50%, 2: 65% (overlap), 3 outgrows 2 by 2017-12 (source: @PyCharm stats) contrary to @zedshaw claims'. Full-screen 528-541 s, then small on the stage screen to ~546 s. Searched transcript for 2017, seventeen, December, chart, graph, tweet, zed, hardway, Vlasov: none near; 'chart' only as 'donut charts' at 7:00 and 'graphs' at 23:00, 'tweet' only at 20:30. Speech here says 'two thousand and sixteen ... as corroborated by Andrei, who at that time worked for PyCharm' - so the anchor avoids 'PyCharm' and the answer (2017-12) is never spoken. Only line-chart tweet in the talk."
+  },
+  {
+    "qid": "h2",
+    "time_s": 1675,
+    "visible_s": [
+      1670,
+      1686
+    ],
+    "anchor": "Screenshot of a YouTube video player inside a dark red frame with 'PyCon Lithuania 2025' branding (older speaker in a tie at a wooden lectern on the left)",
+    "anchor_s": [
+      1670,
+      1686
+    ],
+    "question": "In the screenshot of a YouTube video player framed in dark red with 'PyCon Lithuania 2025' branding, what total length does the player show for the video?",
+    "answer": "1:11:21",
+    "notes": "Player bar reads '1:01:43 / 1:11:21'; title 'Brandon Rhodes - Skip the Design Patterns Architecting with Nouns and Verbs', channel PyCon Lithuania. Full-screen 1670-1683 s, then on the stage screen (too small to read) to ~1686 s. Searched transcript for Lithuania, Vilnius, Rhodes, design patterns, nouns, verbs, YouTube, subscri, eleven, seventy, hour: none spoken anywhere near (YouTube only at 3:00 and ~65:00; 'one hour of time' at 38:00 is unrelated). Speech at 27:40-28:10 quotes the slide text ('walk before you run, before you fly ... Brendan wrote'), which is why the anchor names only the frame branding and the answer is the player's duration, which nothing in speech or field knowledge reveals. Only PyCon Lithuania screenshot in the talk."
+  },
+  {
+    "qid": "h3",
+    "time_s": 3580,
+    "visible_s": [
+      3576,
+      3590
+    ],
+    "anchor": "Screenshot of a YouTube video player playing a talk with PyCon US 2025 branding (purple background, red cable car, '25' snake logo)",
+    "anchor_s": [
+      3576,
+      3590
+    ],
+    "question": "In the screenshot of a YouTube video player showing a PyCon US 2025 talk, which pink word does the arrow at the top of the slide point down from?",
+    "answer": "unreflected",
+    "notes": "Slide in the embedded video: 'unreflected' (pink) with an arrow down to 'The use of ORMs and class-based validation frameworks ruins your projects.' Searched transcript for unreflected, ruins, PyCon US, YouTube, video player: 'unreflected' and 'ruins' never spoken; 'PyCon US' only at 11:00; 'YouTube' only at 3:00 and ~65:00. Nearby speech (59:23-59:51) mentions 'design pressures' and using one class in frontend/business code/database, which does not reveal the word. Only PyCon US video-player screenshot in the talk."
+  }
+]

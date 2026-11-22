@@ -1,0 +1,32 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 381,
+    "visible_s": [379, 383],
+    "anchor": "Lower-third name caption 'MATS SCHÖNAUER' on the bearded interviewee in a knit beanie and round glasses",
+    "anchor_s": [379, 383],
+    "question": "In the name caption for Mats Schönauer, what is the name of his YouTube project, given in quotation marks?",
+    "answer": "Crock of Gold",
+    "notes": "Searched transcript for 'Schönauer'/'Schonauer', 'Mats', 'crock', 'gold', 'Berlin'. The only hit is 'Schonauer' at 9:18 (~558 s, about 3 min after the caption); 'crock'/'gold' never appear. The speech over the caption (6:19-6:44) is about 30,000 fake celebrity videos and doesn't mention him or the caption. The caption appears once (checked the 4 s dense sheets for 0-1040 s)."
+  },
+  {
+    "qid": "h2",
+    "time_s": 1326,
+    "visible_s": [1324, 1329],
+    "anchor": "X/Twitter post by Adam Faze (@adamfaze) beginning 'i've officially stumbled upon the weirdest thing i've ever seen'",
+    "anchor_s": [1324, 1329],
+    "question": "In the X post by Adam Faze about a Spotify radio song, how many of the songs does he say he is sharing ('here's N of them')?",
+    "answer": "49",
+    "notes": "Searched transcript for 'Faze', 'Adam', 'stumbled', 'weird', 'radio', 'playlist', '49'/'forty-nine'. None spoken (the only '49' hit is an SRT cue index). Narration at 22:04 says only 'countless songs by countless artists that all sound the same'. Post appears once; next shot is a different post by @alliebwoods."
+  },
+  {
+    "qid": "h3",
+    "time_s": 3052,
+    "visible_s": [3047, 3058],
+    "anchor": "End-credits card beginning 'Written and Directed by MARIO SIXTUS', beside an AI image of a boy with a sand-sculpture dog on a beach",
+    "anchor_s": [3047, 3058],
+    "question": "On the end-credits card that begins 'Written and Directed by Mario Sixtus', who is credited for Camera?",
+    "answer": "Susanna Salonen",
+    "notes": "Searched transcript for 'Sixtus', 'direct', 'camera', 'Salonen', 'Susanna', 'credit'. None spoken ('directed' appears only as 'directed to slop' at 29:39; 'direction' at 18:58). Over the credits (50:28 onward) the audio is only 'Lives on.' and a sung 'oh, oh...' loop, so no speech describes the card. The 'A Film by MARIO SIXTUS' title at ~1:57 is a different card with no camera credit."
+  }
+]

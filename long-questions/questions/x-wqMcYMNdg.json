@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 909,
+  "visible_s": [
+   907,
+   911
+  ],
+  "question": "Near the start of the Ground News ad, a phone running the Ground News app shows a single article card. Which news outlet published that article?",
+  "answer": "Breitbart",
+  "notes": "Phone screen ~907-911 s shows a Breitbart card (tags Right / Mixed Factuality) headlined 'D.C. National Guard Shooting Suspect Rahmanullah Lakanwal Worked with CIA in Afghanistan'; a collage of outlets covering the same story precedes it (904-906). Transcript cue 14:55-15:21 only says Ground News 'compares coverage on stories across news outlets'; Breitbart, the story and the shooting are never mentioned. Verified with extracted frames at 1 s spacing."
+ },
+ {
+  "qid": "v2",
+  "time_s": 1923,
+  "visible_s": [
+   1920,
+   1934
+  ],
+  "question": "When the guest says the chart of productivity going up while wages stay flat has become a mainstream chart, what is she wearing in her ears to hear the conversation?",
+  "answer": "White wired earbuds (not over-ear headphones)",
+  "notes": "Guest solo shot from ~1920 s (caption with her name at 1921-1926) shows white wired earbuds with the cable visible; Jon wears over-ear headphones. Cue 32:00-32:31 is about the productivity/wages chart; earbuds/headphones are never mentioned in the transcript. Verified with 1 s frames 1912-1935."
+ },
+ {
+  "qid": "v3",
+  "time_s": 3705,
+  "visible_s": [
+   3697,
+   3727
+  ],
+  "question": "When Jon asks whether AI supercharges the inequities between labor and capital, a wooden crate sits on the dark dresser behind him on the viewer's right. What brand name is printed on the crate?",
+  "answer": "Hires",
+  "notes": "Jon solo shot ~3697-3727 s (right after the Smalls ad and the guest caption) shows a wooden crate printed 'Hires' (root beer brand) on the right-hand dresser; legible at 720p (check frame at 3705). The question is spoken in cue 01:00:58-01:01:30; 'Hires' never appears in the transcript."
+ },
+ {
+  "qid": "v4",
+  "time_s": 4878,
+  "visible_s": [
+   4876,
+   4885
+  ],
+  "question": "After the interview, when the producer starts reading listener questions to Jon ('What do they want this fall morning, John?'), what segment title appears in the on-screen banner?",
+  "answer": "The Weekly Questions",
+  "notes": "Lower-left banner 'THE WEEKLY SHOW | THE WEEKLY QUESTIONS' visible ~4876-4885 s (1 s frames checked). Cue 01:21:11-01:21:45 starts 'What do they want this fall morning, John?'; the phrase 'weekly questions' is never spoken (grep)."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 4876,
+  "visible_s": [
+   4875,
+   4887
+  ],
+  "question": "In the segment after the interview, what is the name of the producer who wears a blue top with dark red (maroon) horizontal stripes?",
+  "answer": "Brittany (Mamedev)",
+  "notes": "Needs speech + visual: at the end of cue 01:20:41-01:21:11 Jon says 'Brittany, what are the people want? What do they want?' and the striped-top woman immediately appears on screen reading the listener question (~4875 s); later Jon asks 'Brittany, how do they keep in touch' (cue 01:27:29) and credits 'producer Brittany Mamedev'. The other producer (black cardigan) is never addressed by name. The transcript never describes clothing, and the frames never show a name for her."
+ },
+ {
+  "qid": "speech",
+  "time_s": 735,
+  "visible_s": [
+   706,
+   739
+  ],
+  "question": "According to the guest, roughly how many full-time workers in the U.S. are on Medicaid or food stamps?",
+  "answer": "About nine million",
+  "notes": "Cue 00:11:45,996-00:12:18,970: 'There is about nine million full-time workers who are on Medicaid or food stamps. Nine million.' Spoken only, not shown on screen."
+ }
+]

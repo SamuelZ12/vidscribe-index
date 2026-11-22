@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 675,
+  "visible_s": [
+   667,
+   681
+  ],
+  "question": "When the speaker says people literally wore T-shirts at PyCon US during the Python 2 vs 3 fights, what is printed on the T-shirt shown?",
+  "answer": "2.8",
+  "notes": "Photo of a black T-shirt with white '2.8' (on projector ~667-672, full screen ~673-677, projector again to ~681). Transcript cue 23 (11:00-11:32) only says 'people literally wore these T-shirts' and credits Alex Gaynor; '2.8' is never said."
+ },
+ {
+  "qid": "v2",
+  "time_s": 1330,
+  "visible_s": [
+   1325,
+   1337
+  ],
+  "question": "When the speaker explains why FastAPI is such a huge success, a 'Web frameworks usage' chart is shown. What was FastAPI's usage share in 2024 according to that chart?",
+  "answer": "38%",
+  "notes": "Chart from 'The State of Python 2025' (FastAPI 21%/25%/29%/38%, callout 'FastAPI usage grew from 29% to 38% in a year'). Cue 44-45 (21:44-22:45) mentions FastAPI but no percentages. Verified with extracted frames at 1335 s."
+ },
+ {
+  "qid": "v3",
+  "time_s": 2215,
+  "visible_s": [
+   2210,
+   2228
+  ],
+  "question": "When the speaker explains that a packaged app is installed into the virtualenv like any other package, he shows a listing of the venv's site-packages directory. Which file does the pink arrow point to?",
+  "answer": "le_package.pth",
+  "notes": "Terminal 'eza .venv/lib/python3.13/site-packages/' with pink arrow at 'le_package.pth' (next to le_package-0.1.0.dist-info). Cue 74 (36:39-37:09) says nothing about le_package or .pth files."
+ },
+ {
+  "qid": "v4",
+  "time_s": 3820,
+  "visible_s": [
+   3812,
+   3830
+  ],
+  "question": "When the speaker recaps his takeaways near the end of the talk, a numbered list appears on a slide. What is point number 1?",
+  "answer": "All sneks are good",
+  "notes": "Slide '1. All sneks are good / 2. Options have costs' (~3812-3830), later with '3. Expand the gradient' (~3854-3872). Transcript says 'Options have costs' (cue 127) but never 'all sneks are good'."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 2545,
+  "visible_s": [
+   2537,
+   2564
+  ],
+  "question": "When the speaker says he googled for the best example of leadership, a film clip of a man in an office is shown. What is the man holding in his hand?",
+  "answer": "A coffee mug",
+  "notes": "Needs speech to locate ('I googled for the best example of leadership', cue 84 ending ~42:23) and the visual: Office Space clip of Bill Lumbergh (suspenders, tie, glasses) holding a white coffee mug, ~2537-2564. Verified frame at 2541 s."
+ },
+ {
+  "qid": "speech",
+  "time_s": 2965,
+  "visible_s": [
+   2957,
+   2989
+  ],
+  "question": "According to the speaker, how long did it take him to git clone PyTorch, and over what connection speed?",
+  "answer": "90 seconds over a 250 megabit connection",
+  "notes": "Cue 99 (49:17-49:49): 'It took 90 seconds to git clone it over a 250 megabit connection'. The slide at that moment shows code statistics, not this number."
+ }
+]

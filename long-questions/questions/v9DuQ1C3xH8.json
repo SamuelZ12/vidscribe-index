@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 467,
+  "visible_s": [
+   465.5,
+   470
+  ],
+  "question": "When the segment begins where she has sautéed onions, garlic and turkey sausage in a pot (for lasagna), what number is shown on the on-screen title card?",
+  "answer": "8 (title card '8 TURKEY LASAGNA')",
+  "notes": "Countdown title card '8 TURKEY LASAGNA' overlays the sausage close-up ~465.5-470 s (sampled at 1 fps). Transcript cue 16 (7:45-8:11) never mentions a number 8 or a countdown; 'lasagna' itself is not said there either."
+ },
+ {
+  "qid": "v2",
+  "time_s": 1020,
+  "visible_s": [
+   1014.5,
+   1028
+  ],
+  "question": "When she explains that she cooks the chicken breasts for the chicken noodle soup the way she always does (rubbed with olive oil and roasted), what does the caption at the bottom of the screen say?",
+  "answer": "basics: roasted chicken",
+  "notes": "White caption bar '* basics:  roasted chicken' over the chicken-breast close-ups ~1014.5-1028 s (verified frame by frame at 1 fps). Speech (cue 35, 16:44-17:11) describes roasting but never says the word 'basics'."
+ },
+ {
+  "qid": "v3",
+  "time_s": 1584,
+  "visible_s": [
+   1581,
+   1586
+  ],
+  "question": "When Ina's friend who has just come back from Paris is shown at the table eating the chicken chili, what color jacket is the friend wearing?",
+  "answer": "yellow",
+  "notes": "Close-up of Patricia in a bright yellow jacket (black-and-white top underneath) ~1581-1586 s, right after the chili toppings shot. Transcript (cue 54) has the table chat but no clothing or color mentioned."
+ },
+ {
+  "qid": "v4",
+  "time_s": 2418,
+  "visible_s": [
+   2416.8,
+   2419.5
+  ],
+  "question": "When she measures out half a cup of cognac for the beef bourguignon, what brand name is printed on the measuring cup?",
+  "answer": "Pyrex",
+  "notes": "Close-up of a glass measuring cup with large blue 'PYREX' lettering while cognac is poured in, ~2416.8-2419.5 s (sampled at 4 fps). Transcript cue 82 (39:58-40:32) only says 'I need a half a cup of cognac'; no brand mentioned anywhere."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 2437,
+  "visible_s": [
+   2430,
+   2445
+  ],
+  "question": "When she says 'now comes the fun part' and tells viewers to stand back, what color is the pot she is working in?",
+  "answer": "green (green enameled Dutch oven)",
+  "notes": "Speech (cue 82, ends 40:32) locates the flambé moment; the pot shown with the cognac flaming (~40:30-40:45, sheet tile 40:37) is a green enameled cast-iron pot. Color is never mentioned in the transcript."
+ },
+ {
+  "qid": "speech",
+  "time_s": 1480,
+  "visible_s": [
+   1464.2,
+   1498.2
+  ],
+  "question": "For the chicken chili, what herb does she use in place of cilantro, and why?",
+  "answer": "Basil, because she hates cilantro",
+  "notes": "Transcript cue 51 (24:24-24:58): 'most chili has cilantro in it, but I personally hate cilantro, so I'm going to put basil in instead.'"
+ }
+]

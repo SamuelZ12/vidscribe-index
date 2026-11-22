@@ -1,0 +1,32 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 709,
+    "visible_s": [707, 712],
+    "anchor": "Lower-third name caption over the long-haired woman in a brown jacket, white top and jeans standing in front of a plain lilac screen",
+    "anchor_s": [707, 712],
+    "question": "What job title does the lower-third caption give for the long-haired woman in the brown jacket, white top and jeans standing before a plain lilac screen?",
+    "answer": "Senior AI Developer Tools Advocate",
+    "notes": "Replaces the Bathiche question, whose answer was guessable from general knowledge. The anchor is visual only. Satya says 'Kayla' at 11:14-11:48 but the anchor doesn't use her name. Her speech while the caption is up ('Our team has been working hard to make Windows a great place for development... improvements and delighters') says nothing about her role. Searched 'advocate', 'advocacy', 'senior', 'title': no hits. 'dev tools' appears once in an unrelated sentence ('take a spin through all the dev tools'), which gives neither 'Senior', 'AI' nor 'Advocate'. Unverified inference: she is publicly known as a Windows Terminal product manager, so field knowledge likely points to a wrong answer. Caption is on screen ~707-712 only; the big-screen intro graphic (11:40, 11:55) shows just her name."
+  },
+  {
+    "qid": "h2",
+    "time_s": 4000,
+    "visible_s": [3992, 4470],
+    "anchor": "The bearded man in the black T-shirt with green lettering who presents with a woman in a black jacket at the demo desk",
+    "anchor_s": [3992, 4470],
+    "question": "What does the green lettering on the bearded man's black T-shirt say, in the demo where he stands with a woman in a black jacket at the desk?",
+    "answer": "WILL CODE FOR TACOS",
+    "notes": "Anchor is purely visual (his clothes and co-presenter); searched 'shirt', 'T-shirt', 'green' - his shirt is never mentioned. Searched 'taco', 'will code' - no hits, so the answer is never spoken. Shirt text is the same in every shot of him (66:30-74:30); readable clearly in close and medium shots e.g. 66:40, 66:50, 69:10."
+  },
+  {
+    "qid": "h3",
+    "time_s": 8010,
+    "visible_s": [8007, 8029],
+    "anchor": "Report page titled 'LCC cutinase DBTL30→DBTL31: model-guided 80-variant library and DNA order prep'",
+    "anchor_s": [8007, 8029],
+    "question": "On the report page titled 'LCC cutinase DBTL30→DBTL31: model-guided 80-variant library and DNA order prep', how many model fits does the summary say were evaluated?",
+    "answer": "22",
+    "notes": "Anchor key words 'cutinase', 'DBTL', 'campaign report' never spoken (speaker only says 'let me open the output for that one'). Speech says Discovery 'trained multiple models and picked the best' but gives no count; searched '22', 'twenty-two' - only SRT cue numbers/timestamps match, never spoken. Avoided the other summary numbers: 80 is spoken ('80 proteins') and 53 is spoken elsewhere (MAI-Thinking 53% SWE-Bench)."
+  }
+]

@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 546,
+  "visible_s": [
+   524,
+   556
+  ],
+  "question": "When the speaker says recipes are algorithms and talks about her grandmother teaching her to bake a cake, the slide lists the steps of baking a cake from a box. For how many minutes does the bake step say to bake?",
+  "answer": "5 minutes (Bake at 350F for 5 minutes)",
+  "notes": "Slide 'ALGORITHMS are RECIPES' step 4 'Bake at 350F for 5 minutes'. Transcript 8:38-9:44 mentions grandmother, toothpick, oven, but no time or temperature. Slide on screen ~524-532 and ~540-556 (camera cut in between). Verified at full res frame 546s."
+ },
+ {
+  "qid": "v2",
+  "time_s": 1290,
+  "visible_s": [
+   1282,
+   1302
+  ],
+  "question": "When the speaker first switches to her programming environment and points out the file editor on the left and the shell on the right, what Python version does the shell's startup banner show?",
+  "answer": "Python 3.8.5",
+  "notes": "Spyder window, console banner 'Python 3.8.5 (default, Sep 3 2020...)' and 'IPython 7.20.0'. Transcript 21:12-21:40 mentions white theme, file editor, shell on the right; no version said anywhere. Verified full-res frame 1287s; banner visible ~1282-1302 (and again in later shell views)."
+ },
+ {
+  "qid": "v3",
+  "time_s": 2440,
+  "visible_s": [
+   2431,
+   2449
+  ],
+  "question": "When the speaker asks what we can do with all these objects and says we can start assigning names to them, the slide shows several objects with names attached. What variable name is the boolean False bound to?",
+  "answer": "flag",
+  "notes": "Slide 'SO MANY OBJECTS, what to do with them?!' animates names: a=2, b=-0.3, x=123, small=0.001, temp=100.4, go=True, flag=False, n=17. Transcript only says 'small' (0.001) and 'temp' (100.4); 'flag' never said. Names visible ~2431-2449; verified full-res frame 2440s."
+ },
+ {
+  "qid": "v4",
+  "time_s": 3686,
+  "visible_s": [
+   3682,
+   3690
+  ],
+  "question": "Right before the summary, when the speaker asks whether the pace was alright, she is standing at her laptop on the lectern. What brand is that laptop?",
+  "answer": "Dell",
+  "notes": "Silver laptop with Dell logo on the lid, clearly visible in camera shot at 3682-3690 (also in other lectern shots throughout). Brand never mentioned in transcript. Verified full-res frame 3686s."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 3000,
+  "visible_s": [
+   2974,
+   3030
+  ],
+  "question": "The speaker shows three versions of the same area/circumference program with handwritten labels. What label is written next to the version she describes as a little better but whose comments just say what the code is doing (which she asks you not to do)?",
+  "answer": "ok",
+  "notes": "Speech (49:35-50:03) identifies the middle (orange) version: 'a little bit better... saving it as a variable... comments are pretty bad... Please don't do that'. Screen labels: green 'meh', orange 'ok', blue 'best'. Transcript says 'meh' but never 'ok' or 'best'. 'ok' visible ~2974-3030; verified full-res frame 3016s."
+ },
+ {
+  "qid": "speech",
+  "time_s": 45,
+  "visible_s": [
+   0,
+   59
+  ],
+  "question": "How long does the speaker say she has been a lecturer in her department?",
+  "answer": "Probably almost 10 years",
+  "notes": "Transcript cues 1-2 (0:00-0:59): 'I've been a lecturer here in the ECE department for... probably almost 10 years now'. Welcome slide on screen shows only name/course, not the duration."
+ }
+]

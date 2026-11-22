@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 444,
+  "visible_s": [
+   440,
+   447
+  ],
+  "question": "When the presenter explains that Liquid Glass was tuned to diffuse the content behind it more effectively, an iPhone Music app is shown. What song title is shown in the now-playing mini player?",
+  "answer": "With Me (John Summit & Julia Wolf)",
+  "notes": "Close-up of Music app tab bar with mini player 'WITH ME / John Summit & Julia Wolf', ~440-447 s. Transcript 06:55-07:30 discusses Liquid Glass readability only; no song or artist named. Verified with per-second frames."
+ },
+ {
+  "qid": "v2",
+  "time_s": 1334,
+  "visible_s": [
+   1333,
+   1338
+  ],
+  "question": "When Ask to Browse is introduced for kids, an iPad shows a website a child is asking permission to visit. What is the website's domain?",
+  "answer": "cyberpetsgame.net",
+  "notes": "iPad Safari 'Ask To Browse Website' dialog with cyberpetsgame.net in URL bar and body, ~1333-1338 s. Transcript 21:47-22:54 never names a site. Verified with per-second frames."
+ },
+ {
+  "qid": "v3",
+  "time_s": 3282,
+  "visible_s": [
+   3281,
+   3285
+  ],
+  "question": "When the Passwords app is described as automatically updating compromised passwords, a list of affected accounts is shown. Which account is at the top of the list?",
+  "answer": "Cervantes Bank",
+  "notes": "List: Cervantes Bank, Tax Prep Pro, Quantum College Hospital, Summit Industrial, Book Shoppe, each 'Compromised password', ~3281-3285 s (Cervantes Bank also on the Security screen right after). Transcript 54:20-55:19 names no accounts."
+ },
+ {
+  "qid": "v4",
+  "time_s": 3451,
+  "visible_s": [
+   3443,
+   3458
+  ],
+  "question": "When the Home app is described as combining related accessory notifications into a single activity, the notifications are about one person's arrival at home. What is that person's name?",
+  "answer": "Lydia",
+  "notes": "Stack of 'California St' notifications ('Front Door was locked by Lydia', 'Lydia seen in the Driveway', ...) collapsing into one 'Lydia is arriving...' lock-screen notification, ~3443-3458 s. Transcript 57:21-57:55 names no person."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 4213,
+  "visible_s": [
+   4212,
+   4219
+  ],
+  "question": "Craig demos a third-party app that identifies the pieces of his outfit to help him find similar clothing. What is the app called, and what price is shown for the first shirt result?",
+  "answer": "Daydream; $138 (Rhone)",
+  "notes": "App name 'Daydream' is spoken (01:09:44-01:10:10) and not clearly legible on screen; results screen 'Show me light blue dress shirts' lists Rhone $138, Rag & Bone $198, ~4212-4219 s. Price never spoken."
+ },
+ {
+  "qid": "speech",
+  "time_s": 655,
+  "visible_s": [
+   643,
+   669
+  ],
+  "question": "In the section on making the system faster, how much faster do newly shot photos now appear in the Photos library?",
+  "answer": "Up to 70% faster",
+  "notes": "Transcript cue 00:10:43-00:11:09: 'new photos appear up to 70% faster' (distinct from 30% app launch, 80% AirDrop, 5x iPad file transfer)."
+ }
+]

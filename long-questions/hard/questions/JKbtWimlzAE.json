@@ -1,0 +1,32 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 255,
+    "visible_s": [233, 263.5],
+    "anchor": "Live stage shot of three presenters standing side by side: two women in white long-sleeve tops (one holding the mic, a steel water bottle in front of her) and a bearded man in a dark blazer on the right",
+    "anchor_s": [233, 263.5],
+    "question": "In the stage shot showing three presenters side by side (two women in white long-sleeve tops, one holding the microphone, and a bearded man in a dark blazer on the right), what color is the man's turban?",
+    "answer": "Green (dark/olive green)",
+    "notes": "Searched transcript for turban, green, blazer, presenters, water bottle: none occur. Speech here is Chelsea's self-introduction (research interests, VC firm). The man's instructor-bio photo (3:10-3:30) shows a lighter turban, but the anchor is the live three-person shot; the same man also wears the same green turban in the later live shots (~4:50, ~10:50), so the answer is consistent."
+  },
+  {
+    "qid": "h2",
+    "time_s": 1447,
+    "visible_s": [1443.3, 1450.6],
+    "anchor": "The 'Want to Learn More?' slide that shows only a Paper link and a QR code (no 'Code & Data' line)",
+    "anchor_s": [1443.3, 1450.6],
+    "question": "On the 'Want to Learn More?' slide that shows only a Paper link and a QR code (no 'Code & Data' line), what is the paper's arXiv identifier?",
+    "answer": "2412.15285",
+    "notes": "An earlier 'Want to Learn More?' slide (~20:35) has a Code & Data line and an ACL Anthology link, so the 'no Code & Data' qualifier makes the anchor unique. 'learn more' is spoken only at 13:47, 20:33 ('if you wish to learn more') and ~22:00 ('learn more broadly'), all >60 s from 24:03. Speech near the slide just says the preprint is 'up on archive'; the numbers 2412 / 15285 (or as words) never appear in the transcript."
+  },
+  {
+    "qid": "h3",
+    "time_s": 2872,
+    "visible_s": [2866.3, 2881],
+    "anchor": "Slide table (Method / Acc / F1 columns) whose rows include 'MAE w/ Random Masking' and 'Ours (Cross-MAE)'",
+    "anchor_s": [2866.3, 2881],
+    "question": "In the slide table with Method, Acc and F1 columns whose last row is 'Ours (Cross-MAE)', what accuracy is listed for 'MAE w/ Random Masking'?",
+    "answer": "55.1%",
+    "notes": "Anchor avoids spoken words: 'Parkinson's' (47:30) and 'correlation-based methods' (~48:00) are spoken next to this slide, so the anchor uses only the Cross-MAE / MAE w/ Random Masking row labels and column headers, which are never spoken (no 'MAE', 'Cross-MAE', 'random masking', 'table', 'F1'). Speech only says 'close to seventy percent accuracy' (Cross-MAE's 67.3%); '55.1' / 'fifty-five' never appear in the transcript. The table appears only on this slide (the preceding build shows a t-SNE plot instead)."
+  }
+]

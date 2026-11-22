@@ -1,0 +1,68 @@
+[
+ {
+  "qid": "v1",
+  "time_s": 13,
+  "visible_s": [
+   8,
+   17
+  ],
+  "question": "On the talk's opening title slide, what object is drawn next to the title, and what is propped under one of its legs?",
+  "answer": "A chair, with one leg propped up on a stack of books (paper)",
+  "notes": "Title slide 'Do Dumb Things' with a line drawing of a chair whose shortened leg stands on a small stack of books. Verified frames at 9s and 13s (slide), 6s is the 'Next up' card, 18s is the camera. Transcript cue 1 only says the talk title; no chair or illustration is mentioned anywhere."
+ },
+ {
+  "qid": "v2",
+  "time_s": 1340,
+  "visible_s": [
+   1326,
+   1358
+  ],
+  "question": "When the speaker recommends mono repositories, what subtitle is shown under the 'Mono Repos' slide heading?",
+  "answer": "Cut from the Same Cloth",
+  "notes": "Slide 'Mono Repos / Cut from the Same Cloth' checked at 1330, 1340, 1355s; camera shot at 1324s, 'Getting Shit Done' at 1360s. Transcript cues 43-44 (21:40-22:39) discuss mono repos, single checkout, lock-step, tooling, but never say 'cut from the same cloth' or 'cloth'."
+ },
+ {
+  "qid": "v3",
+  "time_s": 2160,
+  "visible_s": [
+   2143,
+   2182
+  ],
+  "question": "In the 'loop' diagram the speaker shows near the end of the main talk (build, copy & paste, abstract, leave alone, throw away), from which node does the long curved arrow lead back to 'Build'?",
+  "answer": "Throw Away",
+  "notes": "Slide 'The Loop / From Slop to Top' at 2146-2180s (camera at 2140 and 2183). Diagram: Build -> Copy & Paste -> Abstract; Build -> Leave Alone; Copy & Paste -> Throw Away; a big arc starts at Throw Away and arrows back into Build. Transcript cue 71-72 (35:39-36:40) names the steps but never says what loops back to build."
+ },
+ {
+  "qid": "v4",
+  "time_s": 2343,
+  "visible_s": [
+   2320,
+   2360
+  ],
+  "question": "In the context-variable example code where a web request handler binds the current user, what function does the handler call and return inside the `with app_context(...)` block?",
+  "answer": "dispatch_request (called as dispatch_request(request))",
+  "notes": "Slide 'Context Managers / Example': def handle_request(request): user = get_user_from_session(request.session); with app_context(user=current_user): return dispatch_request(request). Visible at 2322, 2328, 2343, 2352, 2358s; camera at 2364s. Transcript (cues 76-77, 38:17-39:17) says 'you create this application context, you bind the current user, and whoever calls the log method' but never says dispatch_request."
+ },
+ {
+  "qid": "mixed",
+  "time_s": 2613,
+  "visible_s": [
+   2605,
+   2638
+  ],
+  "question": "During the Q&A, when the speaker goes back through his slides to show what he calls 'the canonical example for a web application' of when to abstract, what is the title of the slide he lands on?",
+  "answer": "You will not reuse (subtitle: Except when you do)",
+  "notes": "Speech locates the moment (cues 85-86, 43:19-43:45: 'Where did I have it here? ... this is sort of the canonical example for a web application'). The slide 'You will not reuse / Except when you do' is on screen ~2605-2638s (frames 2610, 2625, 2635; camera at 2603 and 2640). The title is never spoken; it is only on the slide (first shown ~18:17)."
+ },
+ {
+  "qid": "speech",
+  "time_s": 2865,
+  "visible_s": [
+   2841.6,
+   2870.8
+  ],
+  "question": "According to the speaker, how many updates did the Rust library for getting the terminal size have over the last two years?",
+  "answer": "50",
+  "notes": "Transcript cue 94 (47:21-47:50): 'this is a library in Rust which gives you the terminal size. Over the last two years, it had 50 updates.' Speaker on camera only, no slide."
+ }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 26,
+    "visible_s": [18, 30.8],
+    "anchor": "Student seated in the audience (seen from behind) wearing a navy T-shirt with a horizontal sunset-striped band printed across the back",
+    "anchor_s": [18, 30.8],
+    "question": "A student in the audience wears a navy T-shirt with a sunset-striped band (orange, yellow, blue) printed across the back. What plant is silhouetted against the sunset on that shirt?",
+    "answer": "A Joshua tree (with desert rock/mesa silhouettes)",
+    "notes": "Clearest in the wide shot from behind the audience right after the title card (~18-30.8 s); the same student and shirt recur in later rear-audience wide shots with the same answer. Speech during 0-90 s is about the Uniform Code of Military Justice, students, and quality = f(knowledge, practice, talent) - never about the audience, clothing or shirts. Searched transcript for 'shirt', 'T-shirt', 'tree', 'Joshua', 'cactus', 'desert', 'sunset', 'plant', 'student in', 'jacket': no hits (only 'students' generically). The graphic is not inferable from recognising the lecture, MIT or Winston."
+  },
+  {
+    "qid": "h2",
+    "time_s": 1470,
+    "visible_s": [1464.8, 1476.5],
+    "anchor": "Gray isometric 3D floor-plan diagram of a building with a large brown upward arrow",
+    "anchor_s": [1464.8, 1476.5],
+    "question": "In the gray isometric floor-plan diagram with a large brown arrow, what is the highest-numbered gate label shown?",
+    "answer": "A12",
+    "notes": "Speech at 24:00-24:30 mentions 'Terminal A at Logan Airport' but never 'floor plan', 'map', 'diagram' or 'arrow' (only 'arrow' at ~31:40, far away; the later hallway photo has a yellow arrow, distinct anchor). Searched 'gate', 'twelve', '12', 'A12': none. Gate labels A1-A12 only visible on screen."
+  },
+  {
+    "qid": "h3",
+    "time_s": 3630,
+    "visible_s": [3584.4, 3643.1],
+    "anchor": "C-SPAN-branded clip of a speaker at a podium in front of a blue background with white stars",
+    "anchor_s": [3584.4, 3643.1],
+    "question": "In the C-SPAN-branded clip of a man speaking at a podium in front of a blue backdrop with white stars, what time is shown beneath the 'LIVE' label?",
+    "answer": "11:23 pm ET (the overlay alternates with the equivalent 8:23 pm PT; either is correct)",
+    "notes": "Clip interleaves with lecture shots (~3584-3597 and ~3624-3643, incl. a crowd shot with same overlay). Transcript names Clinton and 'Democratic convention' but never 'C-SPAN', 'span', 'live' or 'podium'; 'star' is spoken only at ~50:50 about the blackboard star (>8 min away). Searched '11:23', '8:23', 'eleven', 'twenty-three', '23', 'ET', 'PT': none. Time not guessable from knowledge."
+  }
+]

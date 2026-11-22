@@ -1,0 +1,32 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 928,
+    "visible_s": [919, 962],
+    "anchor": "Screenshot of Sam Altman's post linking to chat.openai.com (left tweet on the slide with the 2010s/2017/2022 timeline)",
+    "anchor_s": [919, 978],
+    "question": "In the screenshot of Sam Altman's post that links to chat.openai.com, how many likes does the post show?",
+    "answer": "63K",
+    "notes": "Slide is full-screen 919-938 s and 953-962 s; room view (counts unreadable) 939-952 s and 963-978 s. Searched transcript for 'Sam', 'Altman', 'openai', 'likes', '63', 'sixty': no matches. Speaker mentions ChatGPT release and 'tweets' (~920-980 s), but the anchor deliberately avoids those words and never names Altman or the link; the like count is never spoken."
+  },
+  {
+    "qid": "h2",
+    "time_s": 3205,
+    "visible_s": [3197, 3316],
+    "anchor": "Table slide titled 'Summary of main methods (non-exhaustive list)' with rows Word2vec and Recurrent Neural Networks and columns Method/Pros/Cons",
+    "anchor_s": [3197, 3316],
+    "question": "In the table titled 'Summary of main methods (non-exhaustive list)', what is the second pro listed for Word2vec, after 'Very simple, yet powerful'?",
+    "answer": "Intuitive embeddings",
+    "notes": "Full-screen 3197-3216 s, then readable in room view to 3316 s; unique slide. Searched 'summar', 'exhaustive', 'methods', 'table', 'intuitive': 'summary'/'table' never spoken; 'exhaustive' only at 34:39-35:12 (~30 min earlier); 'methods' only at 46:31; 'intuitive' only as 'intuitively' at 56:07 in an unrelated sentence. Speaker says 'recap' at 53:09 and calls Word2vec 'a very simple approach' (the first pro) but never says the second pro."
+  },
+  {
+    "qid": "h3",
+    "time_s": 4412,
+    "visible_s": [4404, 4424],
+    "anchor": "Slide titled '...with a trick!' (two square heatmaps at the bottom right)",
+    "anchor_s": [4404, 4586],
+    "question": "On the slide titled '...with a trick!', whose name is credited in the footnote for the right-hand figures?",
+    "answer": "Kazemnejad (2019)",
+    "notes": "Slide is full-screen 4404-4424 s (footnote readable), then room view to 4586 s, where the footnote is too small to read. Only slide with this title. Searched 'trick' (nearest: 81:29, 82:03, 83:44, ~5-6 min after the slide), 'heatmap', 'stripe', 'diagonal', 'Kazemnejad', 'credit': none within 60 s; Kazemnejad and the footnote never spoken anywhere. The question does not name the topic and does not use 'transformer', 'encoder' or 'decoder'. Speech at this point covers learned vs. fixed position embeddings (watch analogy) but never mentions the figures or their source. Mild risk: an agent that reads the topic off the transcript could guess the well-known Kazemnejad blog."
+  }
+]

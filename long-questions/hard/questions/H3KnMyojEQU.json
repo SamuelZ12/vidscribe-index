@@ -1,0 +1,32 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 587,
+    "visible_s": [584, 590],
+    "anchor": "Presenter in a grey hoodie standing in a wood-floored studio full of indoor cycling bikes, with a name caption in the lower left",
+    "anchor_s": [582, 640],
+    "question": "In the shot of the presenter in a grey hoodie standing in a wood-floored studio full of indoor cycling bikes, what job title appears in her on-screen name caption?",
+    "answer": "Sr. Director, Fitness Technologies",
+    "notes": "Searched cycl/bike/spin/studio: only 'cycle tracking' at ~18 min, nothing near 9:40-10:40. She is introduced only as 'Jules' (9:14-9:48); 'Julz Arney', 'Arney', 'director', 'senior' never spoken; 'technology' appears only in other contexts (5G, A19, etc.), never 'Fitness Technologies'. Caption appears once (verified 1 fps crop 580-600)."
+  },
+  {
+    "qid": "h2",
+    "time_s": 2270,
+    "visible_s": [2150, 2350],
+    "anchor": "Presenter in a lime-green top standing on a lawn at night under palm trees in front of neon-lit Art Deco buildings",
+    "anchor_s": [2150, 2350],
+    "question": "In the night scene where a presenter in a lime-green top stands on a lawn under palm trees in front of neon-lit Art Deco buildings, what name is written in pink neon on the teal-lit building behind her?",
+    "answer": "The Carlyle",
+    "notes": "Searched carlyle/leslie/hotel/miami/beach/florida/ocean/neon/art deco/palm: none in transcript. Speech in this segment is Megan describing iPhone 17 cameras. The neon 'The Carlyle' sign is visible behind her across her many shots 35:50-39:10 (clear in close shot ~37:30 and wide shot 37:50); 'LESLIE' is the yellow sign on a different building, so the question specifies pink neon on the teal-lit building."
+  },
+  {
+    "qid": "h3",
+    "time_s": 3428,
+    "visible_s": [3426, 3431],
+    "anchor": "Presenter in a black jacket walking toward the camera in an Apple Store with huge grey X-shaped steel trusses, with a name caption in the lower left",
+    "anchor_s": [3425, 3436],
+    "question": "When the presenter in a black jacket is first shown in the Apple Store with huge grey X-shaped steel trusses, what job title appears in his on-screen name caption?",
+    "answer": "SVP, Worldwide Marketing",
+    "notes": "He is introduced as 'John's' (transcription of 'Joz') at 56:38-57:11; 'Greg', 'Joz', 'Joswiak', 'marketing', 'SVP', 'senior vice president' never spoken. 'Store'/'trusses' not spoken near 57:00. The truss store recurs through 71 min but the name caption appears only once (verified 1 fps crop 3420-3440)."
+  }
+]

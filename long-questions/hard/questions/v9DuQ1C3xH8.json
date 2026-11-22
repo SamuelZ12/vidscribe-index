@@ -1,0 +1,32 @@
+[
+  {
+    "qid": "h1",
+    "time_s": 262,
+    "visible_s": [259, 263.5],
+    "anchor": "Dining-table shot with a gray-haired man in a blue-and-white striped shirt, seen from behind, facing Ina across the table",
+    "anchor_s": [258.5, 263],
+    "question": "In the dining-table shot where a gray-haired man in a blue-and-white striped shirt sits with his back to the camera across from Ina, what Roman-numeral year appears in the on-screen copyright notice?",
+    "answer": "MMVIII (2008)",
+    "notes": "Notice reads '© MMVIII Television Food Network, G.P. All Rights Reserved', overlaid on the closing shots of the first recipe (~259-263.5 s). Transcript has no 'copyright', 'network', 'MMV...', '2008' or 'thousand'; 'eight' appears only as 'eight to ten' (13:55), 'twenty-eight ounce' (24:20) and 'eight-inch' (34:20). No 'striped', 'shirt' or 'gray' anywhere. Not guessable: other segments carry different years (MMIV, MMVI, MMIX, 2015...). The speech around this moment mentions 'Steven' and 'a little parmesan', so the anchor avoids cheese and names."
+  },
+  {
+    "qid": "h2",
+    "time_s": 1569,
+    "visible_s": [1568, 1572],
+    "anchor": "Ina at a dinner table with a blonde woman in a bright yellow jacket, a gold-framed still-life painting on the striped wall behind them",
+    "anchor_s": [1568, 1592],
+    "question": "In the scene where Ina sits at a dinner table with a blonde woman in a bright yellow jacket, what food is shown in the framed still-life painting on the wall behind them?",
+    "answer": "Bread rolls (brioche-style buns on a plate, beside a folded white napkin and a small blue cup)",
+    "notes": "Searched 'painting', 'picture', 'yellow', 'jacket', 'blond', 'bread', 'roll', 'brioche', 'bun', 'napkin'. None of 'painting', 'picture', 'jacket', 'blond', 'napkin', 'brioche', 'bun' is spoken. 'yellow' appears only as 'yellow onion' (19:30), 'yellow peppers' (22:58) and 'yellow onions' (39:20), all more than 60 s away. 'bread' appears only as panko breadcrumbs, cornbread (19:40-21:08) and 43:10/46:35, all more than 60 s away. 'roll' appears only as rolling dough or turkey, never bread rolls. The same painting also hangs in the striped-wallpaper kitchen in the last recipe (e.g. ~2220 s, ~2752 s) with the same answer."
+  },
+  {
+    "qid": "h3",
+    "time_s": 2850,
+    "visible_s": [2849, 2854],
+    "anchor": "Dinner table set with a bouquet of white roses, small potted topiary trees and votive candles",
+    "anchor_s": [2832, 2860],
+    "question": "On the dinner table decorated with a bouquet of white roses and small potted topiary trees, what dessert sits on the white cake stand at the center of the table?",
+    "answer": "A tart (fluted pastry shell with a dark filling)",
+    "notes": "Searched 'tart', 'cake', 'dessert', 'pie', 'pecan', 'rose', 'flower', 'topiar', 'candle'. 'tart' appears only inside 'start'. No 'cake' or 'dessert'. 'pie' appears only in the chicken pot pie section (29:48-36:48), far away. 'rose' appears only inside 'rosemary', 'flower' only inside 'cauliflower', and 'topiary' and 'candle' are never spoken. The nearby speech is about bread, parsley, wine and melted cheese. Nothing in the episode is a tart, so it is not guessable."
+  }
+]
