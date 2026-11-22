@@ -87,6 +87,10 @@ def fetch():
     items = sample()
     write_json(DATA / 'items.json', [dataclasses.asdict(i) for i in items])
 
+    download_videos(items)
+
+
+def download_videos(items):
     def download(video):
         path = DATA / (video + '.mp4')
         if path.exists():
