@@ -4,7 +4,7 @@ import random
 from pathlib import Path
 from statistics import mean, median
 
-from pilot import ARMS, DATA, ROOT, RUNS, SEED, items, rows
+from pilot import ARMS, DATA, RUNS, SEED, items, rows
 from runner import run_file
 
 
@@ -96,4 +96,4 @@ def report():
                   '“Operation not permitted” for a workspace symlink to an outside nonce. '
                   'Ignoring user config alone left personal skills in the prototype. The pilot also disables '
                   'host skill discovery, injected skill instructions, project documents, plugins and memories.'])
-    (ROOT/'docs/pilot-report.md').write_text('\n'.join(lines)+'\n')
+    print('\n'.join(lines))

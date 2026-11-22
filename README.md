@@ -24,4 +24,7 @@ failures. Use a fresh harness checkout for a new measurement, including after
 changing vidscribe. Keep the vidscribe checkout clean at the intended commit.
 Local inputs and per-session records live in ignored `data/` and `runs/`.
 Prepared media lives in `/private/tmp/clip-*` and session workspaces in
-`~/Movies/clip-*`. Report fetches the pinned keys into memory after all runs.
+`~/Movies/clip-*`. Report fetches the pinned keys into memory after all runs and prints Markdown.
+The measured pilot and the review of its rollouts are in [the pilot report](docs/pilot-report.md).
+During preparation, `pilot.py run --ready` runs only sessions with finished media.
+A subsequent `pilot.py run` finishes the remaining sessions.
