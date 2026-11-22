@@ -32,7 +32,7 @@ def one(item, arm, versions):
     session(item, arm, versions, result, media, VIDSCRIBE, 1, manifest['seconds'], cleanup=False)
 
 
-def session(item, arm, versions, result, media, checkout, attempt, processing, cleanup=True, guidance=None, free_text=False):
+def session(item, arm, versions, result, media, checkout, attempt, processing, cleanup=True, guidance=None, free_text=False, capture_inputs=False):
     work = Path(tempfile.mkdtemp(prefix='clip-', dir=Path.home() / 'Movies'))
     for name in arm.files:
         src, dst = media / name, work / name
@@ -68,6 +68,11 @@ def session(item, arm, versions, result, media, checkout, attempt, processing, c
         out = control / 'answer'
         cmd = options(work) + ['--output-schema', str(schema), '-o', str(out),
                 arm.request + ' and answer the question in question.md. Do not use the web. ' + ending]
+        inputs = {}
+        if capture_inputs:
+            inputs.update(prompt=cmd[-1], options=options(work),
+                          workspace_files=sorted(str(p.relative_to(work)) for p in work.rglob('*')
+                                                 if p.is_file() or p.is_symlink()))
         start = time.time()
         proc = subprocess.Popen(cmd, cwd=work, env=environment(work), stdin=subprocess.DEVNULL,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
@@ -97,7 +102,7 @@ def session(item, arm, versions, result, media, checkout, attempt, processing, c
     write_json(result, dict(item_id=item.item_id, arm=arm.name, attempt=attempt, processing_seconds=processing, workspace=str(work),
                             status=status, answer=answer, seconds=end-start, started=start, ended=end,
                             error=err.decode(errors='replace')[-2000:] if status=='error' else None,
-                            **versions, **audit))
+                            **versions, **audit, **inputs))
     if cleanup:
         shutil.rmtree(work)
     print(item.item_id, arm.name, status, round(end-start), flush=True)

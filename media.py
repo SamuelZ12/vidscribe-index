@@ -12,24 +12,24 @@ from bounds import environment
 from pilot import DATA, ROOT, Item, download_videos, rows, write_json
 
 
-def panel():
-    items = [Item(**row) for row in json.loads((DATA / 'dev.json').read_text())]
-    expected = json.loads((ROOT / 'split.json').read_text())['dev']
+def panel(partition="dev"):
+    items = [Item(**row) for row in json.loads((DATA / (partition + '.json')).read_text())]
+    expected = json.loads((ROOT / 'split.json').read_text())[partition]
     if sorted(i.item_id for i in items) != expected:
-        raise ValueError('Dev metadata does not match frozen split. Run fetch.')
+        raise ValueError('Panel metadata does not match frozen split. Run fetch.')
     return items
 
 
-def fetch():
+def fetch(partition="dev"):
     split = json.loads((ROOT / 'split.json').read_text())
     dataset = rows()
-    ids = set(split['dev'])
-    assert len(ids) == 100 and len(dataset) == 144
-    assert ids.isdisjoint(split['holdout']) and ids.union(split['holdout']) == {r['item_id'] for r in dataset}
+    ids = set(split[partition])
+    assert len(ids) == {'dev': 100, 'holdout': 44}[partition] and len(dataset) == 144
+    assert set(split['dev']).isdisjoint(split['holdout']) and set(split['dev']).union(split['holdout']) == {r['item_id'] for r in dataset}
     assert len({r['video_id'] for r in dataset}) == 144
     items = [Item(**{f.name: bool(r['audio']) if f.name == 'has_audio' else r[f.name]
                      for f in dataclasses.fields(Item)}) for r in dataset if r['item_id'] in ids]
-    write_json(DATA / 'dev.json', [dataclasses.asdict(i) for i in items])
+    write_json(DATA / (partition + '.json'), [dataclasses.asdict(i) for i in items])
     download_videos(items)
 
 
