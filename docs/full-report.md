@@ -84,6 +84,5 @@ These results cover one agent, model and effort, 144 questions, and three attemp
 Requires the saved local records, cached inputs, rollouts and access to the pinned dataset key.
 
 ```sh
-cd /Users/samuelzhang/dev/vidscribe-index
 uv run --python 3.13 full_report.py
 ```

@@ -13,7 +13,7 @@ from results import AXES, aggregate_item, compare, fmt, interval
 
 PAIRS = [('vidscribe', 'stock'), (PLAIN, 'vidscribe'), (GUIDED, PLAIN), (PLAIN, 'stock')]
 DOCS = ROOT / 'docs'
-REBUILD = 'cd /Users/samuelzhang/dev/vidscribe-index\nuv run --python 3.13 full_report.py'
+REBUILD = 'uv run --python 3.13 full_report.py'
 
 
 def rollout_inputs(record):

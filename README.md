@@ -1,6 +1,44 @@
 # vidscribe-index
 
-Measure vidscribe quality, API-equivalent dollars and seconds per question on a frozen Video-Index v1.1 development panel. The local runner uses Samuel's ChatGPT login on the Mini, ffmpeg, ffprobe, uv and the host's installed vidscribe speech model. It keeps media, questions and attempt records under ignored directories. Only aggregate scores leave the machine.
+The harness behind the [vidscribe benchmark](https://github.com/SamuelZ12/vidscribe/blob/master/docs/benchmark.md). It runs Codex CLI on video questions under five setups and records accuracy, API-equivalent dollars and seconds per question:
+
+| Setup | What the agent gets |
+|---|---|
+| `transcript` | vidscribe's transcript, no video |
+| `stock` | the video file, with `ffmpeg` and `ffprobe` installed |
+| `ffmpeg-transcript` | the video file plus vidscribe's `.txt` and `.srt` transcript |
+| `ffmpeg-guided` | the same, plus the guidance file in [`prototype/watch-video/SKILL.md`](prototype/watch-video/SKILL.md) |
+| `vidscribe` | vidscribe's output, its skill, and its `--at` and `--scan` commands |
+
+The prompts for each setup are in [`arms.py`](arms.py) and [`pilot.py`](pilot.py). Each session runs in a fresh folder under a Codex permissions profile that blocks the network and reads outside the folder ([`bounds.py`](bounds.py)).
+
+## Results
+
+- [Full run](docs/full-report.md): all 144 questions of [Video-Index v1.1](https://github.com/Espere-1119-Song/Video-Index), three attempts per setup, 2,160 sessions. Summary numbers are in [`docs/full-summary.json`](docs/full-summary.json).
+- [Long talks](docs/ffmpeg-arms-report.md): 108 free-text questions on 12 long YouTube videos, graded blind. The questions are in [`long-questions/`](long-questions/).
+- [Baseline](docs/baseline-report.md) and [pilot](docs/pilot-report.md): the earlier runs on the first 100 questions.
+
+Every run used Codex CLI 0.169.0 with `gpt-6.2-sol` at medium effort, on a ChatGPT subscription. Dollars are computed from each request's token counts at API list prices ([`results.py`](results.py)).
+
+## What this repository does not contain
+
+No Video-Index videos, questions or answer keys, and no per-question results. `fetch` downloads the videos from the [Hugging Face dataset](https://huggingface.co/datasets/Video-Index/Video-Index-v1-1) at a pinned revision. The report scripts read the answer key from the same revision at report time and never write it to disk. Video-Index items keep the licences of their source benchmarks, several of them non-commercial. [`split.json`](split.json) lists only item IDs.
+
+## Rerun the full panel
+
+The harness was built for one Mac and pins its tools: Codex CLI 0.169.0 at `/opt/homebrew/bin/codex`, vidscribe at commit `7a119b4` in a sibling checkout, `ffmpeg`, `uv` and Python 3.13. Expect to edit those pins before it runs elsewhere.
+
+```sh
+uv run --python 3.13 baseline.py fetch       # the 100 dev videos
+uv run --python 3.13 baseline.py prepare
+uv run --python 3.13 baseline.py baseline    # dev: vidscribe, stock, transcript
+bash prototype/run.sh                        # dev: the two ffmpeg setups, then the long talks
+uv run --python 3.13 full_run.py prepare     # the 44 holdout videos
+uv run --python 3.13 full_run.py run
+uv run --python 3.13 full_report.py
+```
+
+Attempt records go to the ignored `runs/` folder. The full run used about 7 points of the weekly Codex meter. The sections below document the first baseline and the regression workflow it was built for.
 
 ## Baseline at harness-v1
 
