@@ -16,7 +16,7 @@ Five setups on all 144 questions of Video-Index v1.1 (100 `dev` and 44 `holdout`
 | `ffmpeg-transcript` | dev x 1 | dev runs 2 and 3, holdout x 3 |
 | `transcript` | dev x 1 | dev runs 2 and 3, holdout x 3 |
 
-That is 1,260 new sessions. The 900 existing records stay as they are and count as runs. Never rewrite or delete an existing record file.
+That is 1,260 new sessions. The 44 holdout videos have not been fetched or processed yet: prepare them the same way as the dev ones, outside the sandbox, before any session. The 900 existing records stay as they are and count as runs. Never rewrite or delete an existing record file.
 
 ## Rules
 
@@ -41,7 +41,7 @@ Fixed before the run. Report each one whatever it shows.
 3. **The speech slice.** Questions whose video has audio and runs longer than 600 seconds. On dev (24 questions, one run for two of the setups) the setups with a transcript scored 42% and 46% against 29% for `stock`. That slice was chosen after seeing dev results, so dev cannot confirm it. Report `ffmpeg-transcript` minus `stock` and `vidscribe` minus `stock` on this slice three ways: holdout only, dev only, all 144. Give the number of questions in each. The holdout row is the check. Say plainly whether it holds, fails, or is too small to tell.
 4. **Audio and silent rows.** Each setup's accuracy on questions with audio and on silent ones, all 144.
 5. **Dev against holdout.** Each setup's accuracy on the 100 and on the 44, to show the holdout was not tuned on.
-6. **Mixed dates.** Existing records ran on Nov 21 and 22 2026 and the new ones later. For `vidscribe` and `ffmpeg-guided` compare dev accuracy of the old runs with nothing new. For `stock`, `ffmpeg-transcript` and `transcript` compare old run 1 with new runs 2 and 3 on dev, paired, and report the difference with its interval.
+6. **Mixed dates.** Existing records ran on Nov 21 and 22 2026 and the new ones later. `vidscribe` and `ffmpeg-guided` get no new dev runs, so they have no such check; say so. For `stock`, `ffmpeg-transcript` and `transcript` compare old run 1 with new runs 2 and 3 on dev, paired, and report the difference with its interval.
 7. **What agents did**, as in the earlier report: images viewed, dense sampling, crops, per setup.
 8. **Run integrity.** Sessions run, failed, retried, the meter before and after, wall time, the Codex version in every record.
 
