@@ -77,3 +77,7 @@ uv run --python 3.13 baseline.py report base stock transcript change-01
 Use a new set name per change. Positive paired accuracy and negative paired dollars or seconds favor the first set. A confidence interval crossing zero leaves the direction unresolved. The Pareto charts connect the undominated point estimates. Report regenerates the Markdown, JSON and self-contained HTML in `docs/`. Pricing happens at report time.
 
 The [pilot report](docs/pilot-report.md) and original pilot records remain available. See the [baseline spec](docs/baseline-spec.md) for the measurement contract.
+
+## License
+
+MIT, see [LICENSE](LICENSE). It covers the code, reports and questions in this repository. Video-Index and the videos keep their own licences and are not included here.
