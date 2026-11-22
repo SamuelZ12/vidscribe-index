@@ -115,6 +115,16 @@ def long(splits):
         print('\n| Arm | '+' | '.join(cats)+' |\n|---|'+'---:|'*len(cats))
         for arm,c in types.items():
             print('|',arm,'|',' | '.join(f'{mean(c[k]):.1%}' for k in cats),'|')
+        print('\n| Paired score difference (pp) | '+' | '.join(cats)+' |\n|---|'+'---:|'*len(cats))
+        for left,right in ((PLAIN,'vidscribe'),(GUIDED,'vidscribe'),(GUIDED,PLAIN)):
+            cells=[]
+            for cat in cats:
+                scores=defaultdict(lambda:defaultdict(list))
+                for _,vid,qid,a,m,_ in subset:
+                    if (qid==cat or cat=='hard' and qid.startswith('h')) and a in (left,right):
+                        scores[vid][a].append(m['accuracy'])
+                cells.append(fmt(interval([mean(v[left])-mean(v[right]) for v in scores.values()]),100,1))
+            print('|',left,'minus',right,'|',' | '.join(cells),'|')
     evidence({arm:[r for *_,a,m,r in data if a==arm] for arm in LONG_ARMS})
 
 if __name__=='__main__':
