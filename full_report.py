@@ -157,9 +157,12 @@ def main():
     lines += ['', 'One sheet is one image return. Dense sampling and crops count sessions requesting them, '
               'including requests that failed.', '', '## Run integrity and limits', '',
               f'Historical sessions: 900, hash-checked before and after. New sessions: {sum(new_statuses.values())}. '
-              f'All statuses: {dict(statuses)}. New statuses: {dict(new_statuses)}. No answer session was retried. '
-              f'Recorded versions: {dict(versions)}. Rollout-confirmed settings: {contexts}/2160.',
-              '', f'Account-wide weekly usage moved from {meter["before"]["usedPercent"]}% to '
+              f'Of {sum(statuses.values()):,} sessions, {statuses["ok"]:,} returned valid answers. '
+              f'Errors: {statuses["error"]}. Timeouts: {statuses["timeout"]}. Missing answers: {statuses["no_answer"]}. '
+              'No answer session was retried. '
+              f'Every record specifies {VERSION}. Rollouts confirm CLI, model, effort, sandbox and '
+              f'network policy in {contexts:,} of {sum(versions.values()):,} sessions.',
+              '', f'Preflight weekly usage was 63%. During collection account-wide weekly usage moved from {meter["before"]["usedPercent"]}% to '
               f'{checks[-1]["meter"]["usedPercent"]}%. The checkpoint window lasted '
               f'{(checks[-1]["time"] - checks[0]["time"])/3600:.2f} hours. Other account use cannot be separated.',
               '', 'For each setup we compared the new rollout prompts and effective permission profiles to a historical '
