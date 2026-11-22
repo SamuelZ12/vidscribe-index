@@ -85,6 +85,8 @@ def sample():
 
 def fetch():
     items = sample()
+    write_json(DATA / 'items.json', [dataclasses.asdict(i) for i in items])
+
     def download(video):
         path = DATA / (video + '.mp4')
         if path.exists():
@@ -99,7 +101,6 @@ def fetch():
         tmp.replace(path)
     with concurrent.futures.ThreadPoolExecutor(4) as pool:
         list(pool.map(download, sorted({i.video_id for i in items})))
-    write_json(DATA / 'items.json', [dataclasses.asdict(i) for i in items])
 
 
 def items():
@@ -135,11 +136,12 @@ def prepare():
 
 if __name__ == '__main__':
     DATA.mkdir(exist_ok=True)
-    with (DATA / 'lock').open('a') as lock:
+    lock_name = 'sessions.lock' if sys.argv[1] in ('run','report') else 'lock'
+    with (DATA / lock_name).open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         if sys.argv[1] == 'run':
             from runner import run
-            run()
+            run(ready_only=sys.argv[2:] == ['--ready'])
         elif sys.argv[1] == 'report':
             from scoring import report
             report()

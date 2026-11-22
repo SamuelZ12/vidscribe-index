@@ -88,9 +88,11 @@ def one(item, arm, versions):
     print(item.item_id, arm.name, status, round(end-start), flush=True)
 
 
-def run():
+def run(ready_only=False):
     RUNS.mkdir(exist_ok=True)
     jobs = [(i, a) for i in items() for a in ARMS if not finished(run_file(i, a))]
+    if ready_only:
+        jobs = [(i, a) for i, a in jobs if (DATA / (i.item_id + '.json')).exists()]
     print(f'{len(jobs)} pending', flush=True)
     if not jobs:
         return
@@ -99,11 +101,16 @@ def run():
     versions = dict(model=MODEL, effort=EFFORT, codex_version=subprocess.check_output(
         ['codex', '--version'], text=True).strip(), vidscribe_commit=commit(VIDSCRIBE), harness_commit=commit(ROOT))
     before = RUNS / 'before.json'
+    opening = weekly()
     if not before.exists():
-        write_json(before, weekly())
+        write_json(before, opening)
+    start = time.time()
     random.Random(SEED).shuffle(jobs)
     with concurrent.futures.ThreadPoolExecutor(4) as pool:
         futures = [pool.submit(one, i, a, versions) for i, a in jobs]
         for f in concurrent.futures.as_completed(futures):
             f.result()
-    write_json(RUNS / 'after.json', weekly())
+    closing = weekly()
+    write_json(RUNS / 'after.json', closing)
+    write_json(RUNS / f'batch-{int(start)}.json', dict(start=start, end=time.time(),
+               count=len(jobs), before=opening, after=closing))
