@@ -9,9 +9,10 @@ import random
 import re
 import subprocess
 import time
+import tempfile
 from pathlib import Path
 
-from bounds import MODEL, EFFORT, VIDSCRIBE, check_boundary
+from bounds import MODEL, EFFORT, VIDSCRIBE, check_boundary, environment
 from media import cache, fetch, panel, prepare
 from pilot import ARMS, DATA, ROOT, RUNS, SEED, commit, write_json
 from quota import weekly
@@ -53,9 +54,12 @@ def settings(name, arm, checkout, attempts, revision):
         harness = 'HEAD'
     if subprocess.call(['git', '-C', ROOT, 'diff', '--quiet', harness, '--', '*.py','split.json']):
         raise ValueError('Measuring code differs from harness tag')
+    # The session PATH gives Homebrew precedence over the parent shell's Codex.
+    with tempfile.TemporaryDirectory() as work:
+        version = subprocess.check_output(['codex','--version'], env=environment(Path(work)), text=True).strip()
     return RunSet(name, arm, str(checkout), revision, subprocess.check_output(
         ['git','-C',ROOT,'rev-parse',harness+'^{commit}'], text=True).strip(), attempts,
-        subprocess.check_output(['codex','--version'],text=True).strip())
+        version)
 
 
 def pending(spec, items):

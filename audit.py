@@ -11,6 +11,8 @@ def inspect_rollout(path, work):
     outside = set()
     detail = False
     detail_returned = False
+    cli_version = None
+    contexts = set()
     weekly = None
     usage = {}
     requests = []
@@ -21,7 +23,11 @@ def inspect_rollout(path, work):
         p = event['payload']
         kind = p.get('type')
         block = ''
+        if event['type'] == 'turn_context':
+            policy = p.get('sandbox_policy', {})
+            contexts.add((p.get('model'),p.get('effort'),policy.get('type'),policy.get('network_access')))
         if event['type'] == 'session_meta':
+            cli_version = p.get('cli_version')
             block = str(p.get('base_instructions', ''))
         if kind == 'message' and p.get('role') == 'developer':
             block = json.dumps(p['content'])
@@ -58,6 +64,6 @@ def inspect_rollout(path, work):
                 detail = True
                 text = str([b.get('text', '') for b in output if isinstance(b, dict)])
                 detail_returned |= bool(re.search(r'(?:at_|scan_)[\w.:-]+\.jpg', text))
-    return dict(rollout=str(path), image_returns=images, detail_requested=detail, detail_returned=detail_returned,
+    return dict(rollout=str(path), rollout_cli_version=cli_version, turn_contexts=sorted(contexts), image_returns=images, detail_requested=detail, detail_returned=detail_returned,
                 outside_paths=sorted(outside), used_percent=weekly, token_usage=usage, requests=requests,
                 instruction_sha256=instructions.hexdigest(), common_instruction_sha256=common.hexdigest())

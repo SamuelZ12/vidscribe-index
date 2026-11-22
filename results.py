@@ -88,6 +88,9 @@ def summarize(spec, sample, key):
                    image_sessions=sum(r['image_returns']>0 for r in records),
                    detail_sessions=sum(bool(r.get('detail_returned')) for r in records),
                    rollouts=sum(bool(r['rollout']) for r in records))
+    expected = [[spec.model,spec.effort,'workspace-write',False]]
+    summary['verified_contexts'] = sum(r.get('turn_contexts') == expected and
+            'codex-cli '+str(r.get('rollout_cli_version')) == spec.codex_version for r in records)
     if spec.arm != 'stock':
         prep = [json.loads((cache(i,spec.vidscribe_commit)/'preparation.json').read_text()) for i in sample]
         summary['preparation_load_1m_range'] = [min(p['load'][0] for p in prep),max(p['load'][0] for p in prep)]
@@ -149,7 +152,10 @@ def output(command, names):
                       f'| {s["agent"]:.1f} | {s["processing"]:.1f} | {tokens} |')
     for n,s in sets.items():
         report.extend(['',f'## {n}','',
-            f'{s["sessions"]} attempts. Accuracy by attempt: '+', '.join(f'{a:.2%}' for a in s['attempts'])+
+            f'{s["settings"]["codex_version"]}, {s["settings"]["model"]} at {s["settings"]["effort"]} effort, '
+            f'vidscribe `{s["settings"]["vidscribe_commit"][:12]}`, harness `{s["settings"]["harness_commit"][:12]}`. '
+            f'{s["verified_contexts"]}/{s["sessions"]} rollout contexts confirmed the CLI, model, effort and sandbox. '
+            f'Accuracy by attempt: '+', '.join(f'{a:.2%}' for a in s['attempts'])+
             f'. Chance-normalized accuracy {s["normalized"]:.2%}. Answers or statuses differed on {s["disagree"]:.0%} of items.',
             '',', '.join(f'{v} {k}' for k,v in s['statuses'].items())+
             f'. {s["rollouts"]} rollouts, {s["image_sessions"]} sessions with images, {s["detail_sessions"]} with detail frames.',
