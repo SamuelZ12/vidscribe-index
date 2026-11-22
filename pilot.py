@@ -23,7 +23,7 @@ RUNS = ROOT / 'runs'
 REV = 'e7404c468cd0ad83d7c96834c6eb4767fe831a72'
 BASE = f'https://huggingface.co/datasets/Video-Index/Video-Index-v1-1/resolve/{REV}'
 SEED = 20261121
-LETTERS = 'ABCD'
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
 @dataclasses.dataclass
@@ -87,8 +87,10 @@ def fetch():
     items = sample()
     def download(video):
         path = DATA / (video + '.mp4')
-        if path.exists() and hashlib.file_digest(path.open('rb'), 'sha256').hexdigest() == video:
-            return
+        if path.exists():
+            with path.open('rb') as f:
+                if hashlib.file_digest(f, 'sha256').hexdigest() == video:
+                    return
         tmp = path.with_suffix('.part')
         subprocess.run(['curl', '-fsSL', '--retry', '3', '-o', tmp, BASE + '/videos/' + path.name], check=True)
         with tmp.open('rb') as f:
@@ -111,15 +113,17 @@ def commit(path):
 def prepare():
     for i in items():
         manifest = DATA / (i.item_id + '.json')
-        if manifest.exists() and json.loads(manifest.read_text())['vidscribe_commit'] == commit(VIDSCRIBE):
-            continue
+        if manifest.exists():
+            prior = json.loads(manifest.read_text())
+            if prior['vidscribe_commit'] == commit(VIDSCRIBE) and (Path(prior['media']) / 'transcript.txt').exists():
+                continue
         start = time.monotonic()
         desk = Path(tempfile.mkdtemp(prefix='clip-', dir='/private/tmp'))
         shutil.copyfile(DATA / (i.video_id + '.mp4'), desk / 'video.mp4')
         env = os.environ | {k: v for k, v in environment(desk).items() if k.startswith('VIDSCRIBE_')}
         with (desk / 'notes.txt').open('w') as log:
             subprocess.run([VIDSCRIBE / 'bin/vidscribe', 'video.mp4'], cwd=desk, env=env,
-                           stdout=log, stderr=subprocess.STDOUT, check=True, timeout=1800)
+                           stdout=log, stderr=subprocess.STDOUT, check=True)
         assert (desk / 'frames/video/overview_01.jpg').is_file()
         shutil.copyfile(desk / 'transcripts/video.txt', desk / 'transcript.txt')
         skill = desk / '.agents/skills/vidscribe'
