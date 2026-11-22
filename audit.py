@@ -13,6 +13,7 @@ def inspect_rollout(path, work):
     detail_returned = False
     weekly = None
     usage = {}
+    requests = []
     instructions = hashlib.sha256()
     common = hashlib.sha256()
     for line in path.open():
@@ -35,7 +36,11 @@ def inspect_rollout(path, work):
                 r = limit.get(window)
                 if r and r['window_minutes'] == 10080:
                     weekly = r['used_percent']
-            usage = (p.get('info') or {}).get('total_token_usage') or usage
+            info = p.get('info') or {}
+            total = info.get('total_token_usage')
+            if total and total != usage:
+                requests.append({k: v - usage.get(k, 0) for k, v in total.items()})
+                usage = total
         if kind in ('custom_tool_call', 'function_call'):
             src = p.get('input') or p.get('arguments', '')
             calls[p['call_id']] = src
@@ -54,5 +59,5 @@ def inspect_rollout(path, work):
                 text = str([b.get('text', '') for b in output if isinstance(b, dict)])
                 detail_returned |= bool(re.search(r'(?:at_|scan_)[\w.:-]+\.jpg', text))
     return dict(rollout=str(path), image_returns=images, detail_requested=detail, detail_returned=detail_returned,
-                outside_paths=sorted(outside), used_percent=weekly, token_usage=usage,
+                outside_paths=sorted(outside), used_percent=weekly, token_usage=usage, requests=requests,
                 instruction_sha256=instructions.hexdigest(), common_instruction_sha256=common.hexdigest())

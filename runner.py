@@ -29,9 +29,15 @@ def one(item, arm, versions):
     if versions['vidscribe_commit'] != manifest['vidscribe_commit']:
         raise RuntimeError('Rerun prepare for this vidscribe revision')
     media = Path(manifest['media'])
+    session(item, arm, versions, result, media, VIDSCRIBE, 1, manifest['seconds'], cleanup=False)
+
+
+def session(item, arm, versions, result, media, checkout, attempt, processing, cleanup=True):
     work = Path(tempfile.mkdtemp(prefix='clip-', dir=Path.home() / 'Movies'))
     for name in arm.files:
         src, dst = media / name, work / name
+        if media == DATA and name == "video.mp4":
+            src = DATA / (item.video_id + ".mp4")
         if src.is_dir():
             shutil.copytree(src, dst, symlinks=True)
         else:
@@ -43,7 +49,7 @@ def one(item, arm, versions):
         notes = work / 'notes.txt'
         notes.write_text(notes.read_text().replace(str(media), '.'))
         (work / 'bin').mkdir()
-        shutil.copy2(VIDSCRIBE / 'bin/vidscribe', work / 'bin/vidscribe')
+        shutil.copy2(checkout / 'bin/vidscribe', work / 'bin/vidscribe')
     (work / 'question.md').write_text(item.question + '\n\n' + '\n'.join(
         f'{letter}. {text}' for letter, text in zip(LETTERS, item.options)) + '\n')
     allowed = list(LETTERS[:len(item.options)])
@@ -81,10 +87,12 @@ def one(item, arm, versions):
     traces = list((Path.home()/'.codex/sessions').glob(f'*/*/*/*-{thread}.jsonl')) if thread else []
     audit = inspect_rollout(traces[0], work) if traces else dict(rollout=None, used_percent=None,
         outside_paths=[], token_usage={}, image_returns=0, detail_requested=False, instruction_sha256=None)
-    write_json(result, dict(item_id=item.item_id, arm=arm.name, attempt=1, workspace=str(work),
+    write_json(result, dict(item_id=item.item_id, arm=arm.name, attempt=attempt, processing_seconds=processing, workspace=str(work),
                             status=status, answer=answer, seconds=end-start, started=start, ended=end,
                             error=err.decode(errors='replace')[-2000:] if status=='error' else None,
                             **versions, **audit))
+    if cleanup:
+        shutil.rmtree(work)
     print(item.item_id, arm.name, status, round(end-start), flush=True)
 
 
