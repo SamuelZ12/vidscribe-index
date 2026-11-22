@@ -59,5 +59,12 @@ def check_boundary():
         outputs = [e['item'].get('aggregated_output', '') for e in map(json.loads, reply.stdout.splitlines())
                    if e['type'] == 'item.completed' and e['item']['type'] == 'command_execution']
         result = '\n'.join(outputs)
-        if first not in result or second in reply.stdout or 'Operation not permitted' not in result:
+        if first not in result:
+            thread = next(e['thread_id'] for e in map(json.loads, reply.stdout.splitlines())
+                          if e['type'] == 'thread.started')
+            trace, = (Path.home()/'.codex/sessions').glob(f'*/*/*/*-{thread}.jsonl')
+            result = '\n'.join(str(p.get('output', '')) for p in
+                               (json.loads(line)['payload'] for line in trace.read_text().splitlines())
+                               if p.get('type') in ('custom_tool_call_output', 'function_call_output'))
+        if second in result or first not in result or second in reply.stdout or 'Operation not permitted' not in result:
             raise RuntimeError('Workspace read boundary unverified')
