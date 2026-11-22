@@ -65,7 +65,7 @@ def report():
     assert before['resetsAt'] == after['resetsAt'], 'Weekly reset during measurement'
     change = after['usedPercent'] - before['usedPercent']
     lines.extend(['', f'The account-wide weekly meter went from {before["usedPercent"]}% to {after["usedPercent"]}% '
-                  f'({change:+d} percentage points). Scaling 60 sessions to 432 gives {change*7.2:.1f} points '
+                  f'(a movement of {change:+d} pp). Scaling 60 sessions to 432 gives {change*7.2:.1f} points '
                   'under the same workload mix. The meter rounds to whole points and includes concurrent account activity. '
                   f'Rounding alone puts the linearly scaled account movement between '
                   f'{max(0,change-1)*7.2:.1f} and {(change+1)*7.2:.1f} points. '
@@ -78,8 +78,8 @@ def report():
                  f'and {sum(r["image_returns"]>0 and r["detail_requested"] for r in vids)} did both.')
     lines.extend(['', f'{sum(bool(r.get("detail_returned")) for r in vids)} vidscribe sessions returned a named detail frame or scan sheet in tool output. '
                   'Image count uses tool-returned image payloads. A detail request alone can fail.', '',
-                  f'The {len(data)} rollouts contained {len({r.get("common_instruction_sha256") for r in data})} distinct '
-                  'base and developer instruction hashes after replacing workspace and runtime temp paths.'])
+                  f'Distinct base and developer instruction hashes across {len(data)} rollouts: '
+                  f'{len({r.get("common_instruction_sha256") for r in data})} after replacing workspace and runtime temp paths.'])
     revisions = ', '.join(sorted({r['harness_commit'][:12] for r in data}))
     flagged = [r for r in data if r['outside_paths']]
     paths = sorted({p.replace(str(Path.home()), '~') for r in flagged for p in r['outside_paths']})
