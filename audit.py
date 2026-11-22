@@ -14,14 +14,21 @@ def inspect_rollout(path, work):
     weekly = None
     usage = {}
     instructions = hashlib.sha256()
+    common = hashlib.sha256()
     for line in path.open():
         event = json.loads(line)
         p = event['payload']
         kind = p.get('type')
+        block = ''
         if event['type'] == 'session_meta':
-            instructions.update(str(p.get('base_instructions', '')).encode())
+            block = str(p.get('base_instructions', ''))
         if kind == 'message' and p.get('role') == 'developer':
-            instructions.update(json.dumps(p['content']).encode())
+            block = json.dumps(p['content'])
+        if kind == 'message' and p.get('role') == 'user' and '# AGENTS.md instructions' in str(p.get('content')):
+            block = json.dumps(p['content'])
+        instructions.update(block.encode())
+        stable = re.sub(r'codex-arg0\w+', 'codex-temp', block.replace(str(work), '$WORK'))
+        common.update(stable.encode())
         if kind == 'token_count':
             limit = (p.get('rate_limits') or {})
             for window in ('primary', 'secondary'):
@@ -48,4 +55,4 @@ def inspect_rollout(path, work):
                 detail_returned |= bool(re.search(r'(?:at_|scan_)[\w.:-]+\.jpg', text))
     return dict(rollout=str(path), image_returns=images, detail_requested=detail, detail_returned=detail_returned,
                 outside_paths=sorted(outside), used_percent=weekly, token_usage=usage,
-                instruction_sha256=instructions.hexdigest())
+                instruction_sha256=instructions.hexdigest(), common_instruction_sha256=common.hexdigest())

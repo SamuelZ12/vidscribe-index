@@ -36,9 +36,10 @@ def report():
         counts = Counter(r['status'] for r in records)
         times = [r['seconds'] for r in records]
         tokens = [r['token_usage']['total_tokens'] for r in records if r['token_usage']]
+        token_median = f'{median(tokens):,.0f}' if tokens else 'unavailable'
         lines.append(f'| {arm} | {sum(hits[arm])}/{len(sample)} | {mean(hits[arm]):.1%} | {mean(normalized):.1%} | '
                      f'{counts["timeout"]} | {counts["error"]} | {counts["no_answer"]} | '
-                     f'{median(times):.1f} | {max(times):.1f} | {median(tokens):,.0f} |')
+                     f'{median(times):.1f} | {max(times):.1f} | {token_median} |')
     lines.extend(['', '## Paired accuracy differences', ''])
     for arm in ('stock', 'transcript'):
         diff, lo, hi = paired(hits['vidscribe'], hits[arm])
@@ -75,12 +76,17 @@ def report():
                  f'{sum(r["image_returns"]>0 for r in vids)} returned image content to the model, '
                  f'{sum(r["detail_requested"] for r in vids)} requested --at or --scan, '
                  f'and {sum(r["image_returns"]>0 and r["detail_requested"] for r in vids)} did both.')
+    lines.extend(['', f'{sum(bool(r.get("detail_returned")) for r in vids)} vidscribe sessions returned a named detail frame or scan sheet in tool output. '
+                  'Image count uses tool-returned image payloads. A detail request alone can fail.', '',
+                  f'The {len(data)} rollouts contained {len({r.get("common_instruction_sha256") for r in data})} distinct '
+                  'base and developer instruction hashes after replacing workspace and runtime temp paths.'])
     revisions = ', '.join(sorted({r['harness_commit'][:12] for r in data}))
     flagged = [r for r in data if r['outside_paths']]
     paths = sorted({p.replace(str(Path.home()), '~') for r in flagged for p in r['outside_paths']})
     lines.extend(['', f'{len(flagged)} sessions referenced outside paths in recorded tool calls: ' + ', '.join(f'`{p}`' for p in paths) + '.', '', 'The read audit checks literal path operands in model tool calls. Paths include attempted accesses '
                   'and command destinations. The rollouts omit implicit library reads and dynamically constructed paths. '
                   'See the local run records for individual paths and instruction hashes.', '',
+                  f'{sum(len(i.options)>4 for i in sample)} sampled items had more than four choices. The harness used the full option list. '
                   f'Sample seed {SEED}, proportional allocation across capability × audio strata, '
                   f'{sum(i.has_audio for i in sample)} audio and {sum(not i.has_audio for i in sample)} silent. '
                   f'{data[0]["codex_version"]}, {data[0]["model"]}, {data[0]["effort"]} effort. '
