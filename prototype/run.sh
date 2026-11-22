@@ -5,6 +5,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PYTHONUNBUFFERED=1
 uv run --python 3.13 arms.py dev
 uv run --python 3.13 arm_report.py short > data/arms-short.md
+uv run --python 3.13 prototype/assemble.py
 uv run --python 3.13 long_arms.py download
 for split in long-dev long-holdout; do
   if [ "$split" = long-holdout ]; then
@@ -14,5 +15,7 @@ for split in long-dev long-holdout; do
   uv run --python 3.13 arms.py "$split"
   uv run --python 3.13 long_arms.py grade "$split"
   uv run --python 3.13 arm_report.py "$split" > "data/arms-$split.md"
+  uv run --python 3.13 prototype/assemble.py
 done
 uv run --python 3.13 arm_report.py long-dev long-holdout > data/arms-long.md
+uv run --python 3.13 prototype/assemble.py
