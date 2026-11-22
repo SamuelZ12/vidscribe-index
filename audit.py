@@ -10,6 +10,7 @@ def inspect_rollout(path, work):
     images = 0
     outside = set()
     detail = False
+    detail_returned = False
     weekly = None
     usage = {}
     instructions = hashlib.sha256()
@@ -32,7 +33,7 @@ def inspect_rollout(path, work):
             src = p.get('input') or p.get('arguments', '')
             calls[p['call_id']] = src
             # Literal file operands only. Tool logs are not a system-call trace.
-            for token in re.findall(r"""(?<![\w./])(?:~/|/|\.\./)[\w./+@~-]+""", src):
+            for token in re.findall(r"""(?<![\w./])(?:~/|/(?:Users|opt|usr|bin|etc|dev|private|tmp|var|System|Library|Applications)/|\.\./)[\w./+@~-]+""", src):
                 target = (work / Path(token).expanduser()).resolve()
                 if not target.is_relative_to(work):
                     outside.add(str(target))
@@ -43,6 +44,8 @@ def inspect_rollout(path, work):
                 images += sum(b.get('type') in ('input_image', 'image') for b in output if isinstance(b, dict))
             if re.search(r'\bvidscribe\s+[^\n;]*?\s--(?:at|scan)\b', src):
                 detail = True
-    return dict(rollout=str(path), image_returns=images, detail_requested=detail,
+                text = str([b.get('text', '') for b in output if isinstance(b, dict)])
+                detail_returned |= bool(re.search(r'(?:at_|scan_)[\w.:-]+\.jpg', text))
+    return dict(rollout=str(path), image_returns=images, detail_requested=detail, detail_returned=detail_returned,
                 outside_paths=sorted(outside), used_percent=weekly, token_usage=usage,
                 instruction_sha256=instructions.hexdigest())

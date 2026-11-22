@@ -10,7 +10,7 @@ import tempfile
 import time
 
 from audit import inspect_rollout
-from bounds import EFFORT, MODEL, VIDSCRIBE, environment, options
+from bounds import EFFORT, MODEL, VIDSCRIBE, check_boundary, environment, options
 from pilot import ARMS, DATA, LETTERS, ROOT, RUNS, SEED, commit, items, write_json
 from quota import weekly
 
@@ -101,6 +101,8 @@ def run(ready_only=False):
     versions = dict(model=MODEL, effort=EFFORT, codex_version=subprocess.check_output(
         ['codex', '--version'], text=True).strip(), vidscribe_commit=commit(VIDSCRIBE), harness_commit=commit(ROOT))
     before = RUNS / 'before.json'
+    if not before.exists():
+        check_boundary()
     opening = weekly()
     if not before.exists():
         write_json(before, opening)

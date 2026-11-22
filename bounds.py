@@ -37,3 +37,27 @@ def environment(work):
                               '/usr/sbin', '/sbin', str(Path(shutil.which('codex')).parent)]),
             'TMPDIR': str(tmp), 'VIDSCRIBE_FRAMES_DIR': str(work / 'frames'),
             'VIDSCRIBE_OUTDIR': str(work / 'transcripts')}
+
+
+def check_boundary():
+    import secrets
+    import subprocess
+    import tempfile
+
+    # The shell must actually attempt the read. A model declining is inconclusive.
+    with tempfile.TemporaryDirectory(prefix='clip-', dir=Path.home() / 'Movies') as desk, \
+         tempfile.TemporaryDirectory(prefix='clip-', dir='/private/tmp') as other:
+        work = Path(desk)
+        outside = Path(other) / 'note'
+        first, second = secrets.token_hex(16), secrets.token_hex(16)
+        (work / 'first').write_text(first)
+        outside.write_text(second)
+        (work / 'second').symlink_to(outside)
+        reply = subprocess.run(options(work) + ['Run cat first second and report the output and errors.'],
+                               cwd=work, env=environment(work), capture_output=True, text=True,
+                               stdin=subprocess.DEVNULL, timeout=180, check=True)
+        outputs = [e['item'].get('aggregated_output', '') for e in map(json.loads, reply.stdout.splitlines())
+                   if e['type'] == 'item.completed' and e['item']['type'] == 'command_execution']
+        result = '\n'.join(outputs)
+        if first not in result or second in reply.stdout or 'Operation not permitted' not in result:
+            raise RuntimeError('Workspace read boundary unverified')
