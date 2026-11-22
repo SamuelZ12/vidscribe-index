@@ -32,7 +32,7 @@ def one(item, arm, versions):
     session(item, arm, versions, result, media, VIDSCRIBE, 1, manifest['seconds'], cleanup=False)
 
 
-def session(item, arm, versions, result, media, checkout, attempt, processing, cleanup=True):
+def session(item, arm, versions, result, media, checkout, attempt, processing, cleanup=True, guidance=None, free_text=False):
     work = Path(tempfile.mkdtemp(prefix='clip-', dir=Path.home() / 'Movies'))
     for name in arm.files:
         src, dst = media / name, work / name
@@ -42,6 +42,10 @@ def session(item, arm, versions, result, media, checkout, attempt, processing, c
             shutil.copytree(src, dst, symlinks=True)
         else:
             shutil.copy2(src, dst)
+    if guidance:
+        target = work / '.agents/skills/watch-video/SKILL.md'
+        target.parent.mkdir(parents=True)
+        shutil.copyfile(guidance, target)
     if 'frames' in arm.files:
         video = work / 'frames/video/video.mp4'
         video.unlink()
@@ -53,14 +57,17 @@ def session(item, arm, versions, result, media, checkout, attempt, processing, c
     (work / 'question.md').write_text(item.question + '\n\n' + '\n'.join(
         f'{letter}. {text}' for letter, text in zip(LETTERS, item.options)) + '\n')
     allowed = list(LETTERS[:len(item.options)])
+    answer_type = dict(type='string') if free_text else dict(type='string', enum=allowed)
+    ending = ('Reply with a short answer, or "unknown" if the video does not show it.'
+              if free_text else 'Reply with the letter.')
     with tempfile.TemporaryDirectory(dir='/private/tmp') as control:
         control = Path(control)
         schema = control / 'format.json'
-        write_json(schema, dict(type='object', properties={'answer': dict(type='string', enum=allowed)},
+        write_json(schema, dict(type='object', properties={'answer': answer_type},
                                 required=['answer'], additionalProperties=False))
         out = control / 'answer'
         cmd = options(work) + ['--output-schema', str(schema), '-o', str(out),
-                arm.request + ' and answer the question in question.md. Do not use the web. Reply with the letter.']
+                arm.request + ' and answer the question in question.md. Do not use the web. ' + ending]
         start = time.time()
         proc = subprocess.Popen(cmd, cwd=work, env=environment(work), stdin=subprocess.DEVNULL,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
@@ -80,7 +87,7 @@ def session(item, arm, versions, result, media, checkout, attempt, processing, c
                 answer = json.loads(out.read_text()).get('answer')
             except (ValueError, AttributeError):
                 pass
-        if status == 'ok' and answer not in allowed:
+        if status == 'ok' and (not isinstance(answer, str) or not answer.strip() or (not free_text and answer not in allowed)):
             status = 'no_answer'
     events = [json.loads(l) for l in log.splitlines() if l.startswith(b'{')]
     thread = next((e['thread_id'] for e in events if e['type'] == 'thread.started'), None)
