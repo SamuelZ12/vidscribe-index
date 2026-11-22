@@ -111,13 +111,15 @@ def commit(path):
     return subprocess.check_output(['git', '-C', path, 'rev-parse', 'HEAD'], text=True).strip()
 
 
-def prepare():
-    for i in items():
+def prepare_item(i):
+    # Host ASR uses one GPU. A fetch may finish while another item is being prepared.
+    with (DATA / 'media.lock').open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
         manifest = DATA / (i.item_id + '.json')
         if manifest.exists():
             prior = json.loads(manifest.read_text())
             if prior['vidscribe_commit'] == commit(VIDSCRIBE) and (Path(prior['media']) / 'transcript.txt').exists():
-                continue
+                return
         start = time.monotonic()
         desk = Path(tempfile.mkdtemp(prefix='clip-', dir='/private/tmp'))
         shutil.copyfile(DATA / (i.video_id + '.mp4'), desk / 'video.mp4')
@@ -145,5 +147,10 @@ if __name__ == '__main__':
         elif sys.argv[1] == 'report':
             from scoring import report
             report()
+        elif sys.argv[1] == 'prepare':
+            for item in items():
+                prepare_item(item)
+        elif sys.argv[1] == 'fetch':
+            fetch()
         else:
-            {'fetch': fetch, 'prepare': prepare}[sys.argv[1]]()
+            sys.exit('usage: pilot.py fetch|prepare|run [--ready]|report')
