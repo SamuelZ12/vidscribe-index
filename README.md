@@ -2,6 +2,12 @@
 
 Measure vidscribe quality, API-equivalent dollars and seconds per question on a frozen Video-Index v1.1 development panel. The local runner uses Samuel's ChatGPT login on the Mini, ffmpeg, ffprobe, uv and the host's installed vidscribe speech model. It keeps media, questions and attempt records under ignored directories. Only aggregate scores leave the machine.
 
+## Baseline at harness-v1
+
+The [report](docs/baseline-report.md), [Pareto charts](docs/pareto.html) and [summary](docs/baseline-summary.json) cover 500 sessions on vidscribe master at `7a119b4`. Both video arms beat transcript. Vidscribe's one-point accuracy lead over stock has a paired 95% interval from −6.7 to +9.0 points. The agent itself answered 7.3 seconds faster with vidscribe, but host processing added 35.6 seconds per question. Of 100 prepared transcripts, 65 contained no text. The transcript result measures an agent that still sees the question and options on those items.
+
+The account meter rose from 40% to 42% during development and host preparation, before the baseline began. During the 64.6 minutes of sessions it moved from 42% to 46%. This implementation session shared the account. The meter cannot allocate usage between sessions. All 500 rollouts confirmed Codex 0.169.0, including the model, effort and network-disabled workspace policy. The pilot used this same session executable. Its report quoted the parent-shell version, 0.171.0.
+
 ## Reproduce the baseline
 
 Use the tagged harness and a clean vidscribe checkout at `7a119b4786de`. From the harness directory:

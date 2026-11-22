@@ -1,0 +1,370 @@
+{
+  "sets": {
+    "base": {
+      "accuracy": [
+        0.4,
+        0.3133333333333333,
+        0.4866666666666667
+      ],
+      "dollars": [
+        0.08644893733333334,
+        0.076733012,
+        0.09709539333333334
+      ],
+      "seconds": [
+        68.87263297014094,
+        54.61812401146861,
+        84.65893171955133
+      ],
+      "agent": 33.22801293055217,
+      "processing": 35.64462003958877,
+      "normalized": 0.1604047619047619,
+      "disagree": 0.21,
+      "settings": {
+        "name": "base",
+        "arm": "vidscribe",
+        "checkout": "/Users/samuelzhang/dev/vidscribe",
+        "vidscribe_commit": "7a119b4786de1198ab533ebe85c0314ae35d90d7",
+        "harness_commit": "e0a851ea79469bbba159530efb540064037a75ef",
+        "attempts": 3,
+        "codex_version": "codex-cli 0.169.0",
+        "model": "gpt-6.2-sol",
+        "effort": "medium",
+        "split": "dev"
+      },
+      "sessions": 300,
+      "statuses": {
+        "ok": 300,
+        "timeout": 0,
+        "error": 0,
+        "no_answer": 0
+      },
+      "attempts": [
+        0.38,
+        0.4,
+        0.42
+      ],
+      "missing_usage": 0,
+      "long_context_sessions": 0,
+      "image_sessions": 300,
+      "detail_sessions": 293,
+      "rollouts": 300,
+      "verified_contexts": 300,
+      "preparation_load_1m_range": [
+        3.2138671875,
+        13.27099609375
+      ],
+      "cost_parts": {
+        "input": 0.06480176666666666,
+        "cached": 0.014921770666666667,
+        "write": 0.0,
+        "output": 0.0067254
+      },
+      "tokens": 182291.13,
+      "noise_sd": 0.02,
+      "noise_95": 0.0392
+    },
+    "stock": {
+      "accuracy": [
+        0.39,
+        0.3,
+        0.49
+      ],
+      "dollars": [
+        0.072556676,
+        0.061735776,
+        0.08391787199999999
+      ],
+      "seconds": [
+        40.52401779651642,
+        33.8991432929039,
+        47.715593559741976
+      ],
+      "agent": 40.52401779651642,
+      "processing": 0,
+      "normalized": 0.16021428571428573,
+      "disagree": 0,
+      "settings": {
+        "name": "stock",
+        "arm": "stock",
+        "checkout": "/Users/samuelzhang/dev/vidscribe",
+        "vidscribe_commit": "7a119b4786de1198ab533ebe85c0314ae35d90d7",
+        "harness_commit": "e0a851ea79469bbba159530efb540064037a75ef",
+        "attempts": 1,
+        "codex_version": "codex-cli 0.169.0",
+        "model": "gpt-6.2-sol",
+        "effort": "medium",
+        "split": "dev"
+      },
+      "sessions": 100,
+      "statuses": {
+        "ok": 100,
+        "timeout": 0,
+        "error": 0,
+        "no_answer": 0
+      },
+      "attempts": [
+        0.39
+      ],
+      "missing_usage": 0,
+      "long_context_sessions": 0,
+      "image_sessions": 100,
+      "detail_sessions": 0,
+      "rollouts": 100,
+      "verified_contexts": 100,
+      "cost_parts": {
+        "input": 0.04984028,
+        "cached": 0.013972096,
+        "write": 0.0,
+        "output": 0.0087443
+      },
+      "tokens": 165515.53
+    },
+    "transcript": {
+      "accuracy": [
+        0.17,
+        0.1,
+        0.24
+      ],
+      "dollars": [
+        0.024991932,
+        0.022106,
+        0.028009476000000002
+      ],
+      "seconds": [
+        45.79216550124343,
+        33.16802591945394,
+        59.86242152145016
+      ],
+      "agent": 10.147545461654664,
+      "processing": 35.64462003958877,
+      "normalized": -0.14704761904761904,
+      "disagree": 0,
+      "settings": {
+        "name": "transcript",
+        "arm": "transcript",
+        "checkout": "/Users/samuelzhang/dev/vidscribe",
+        "vidscribe_commit": "7a119b4786de1198ab533ebe85c0314ae35d90d7",
+        "harness_commit": "e0a851ea79469bbba159530efb540064037a75ef",
+        "attempts": 1,
+        "codex_version": "codex-cli 0.169.0",
+        "model": "gpt-6.2-sol",
+        "effort": "medium",
+        "split": "dev"
+      },
+      "sessions": 100,
+      "statuses": {
+        "ok": 100,
+        "timeout": 0,
+        "error": 0,
+        "no_answer": 0
+      },
+      "attempts": [
+        0.17
+      ],
+      "missing_usage": 0,
+      "long_context_sessions": 0,
+      "image_sessions": 0,
+      "detail_sessions": 0,
+      "rollouts": 100,
+      "verified_contexts": 100,
+      "preparation_load_1m_range": [
+        3.2138671875,
+        13.27099609375
+      ],
+      "cost_parts": {
+        "input": 0.02057308,
+        "cached": 0.002916352,
+        "write": 0.0,
+        "output": 0.0015025
+      },
+      "tokens": 39600.31
+    }
+  },
+  "comparisons": {
+    "base minus stock": {
+      "accuracy": {
+        "interval": [
+          0.009999999999999993,
+          -0.06666666666666668,
+          0.08999999999999998
+        ],
+        "verdict": "no measurable difference"
+      },
+      "dollars": {
+        "interval": [
+          0.013892261333333333,
+          0.005334074666666669,
+          0.022179889333333334
+        ],
+        "verdict": "worse"
+      },
+      "seconds": {
+        "interval": [
+          28.348615173624516,
+          17.32198353368168,
+          40.59397488945979
+        ],
+        "verdict": "worse"
+      }
+    },
+    "base minus transcript": {
+      "accuracy": {
+        "interval": [
+          0.22999999999999998,
+          0.13333333333333333,
+          0.3266666666666667
+        ],
+        "verdict": "better"
+      },
+      "dollars": {
+        "interval": [
+          0.061457005333333335,
+          0.052045857333333334,
+          0.07163307466666667
+        ],
+        "verdict": "worse"
+      },
+      "seconds": {
+        "interval": [
+          23.080467468897503,
+          19.242975561618806,
+          27.3060853044192
+        ],
+        "verdict": "worse"
+      }
+    },
+    "stock minus transcript": {
+      "accuracy": {
+        "interval": [
+          0.22,
+          0.11,
+          0.34
+        ],
+        "verdict": "better"
+      },
+      "dollars": {
+        "interval": [
+          0.047564744,
+          0.037202116,
+          0.058752624
+        ],
+        "verdict": "worse"
+      },
+      "seconds": {
+        "interval": [
+          -5.268147704727016,
+          -16.207479601616505,
+          4.791090510659851
+        ],
+        "verdict": "no measurable difference"
+      }
+    }
+  },
+  "chance": 0.25710714285714287,
+  "meter": {
+    "baseline.meter.json": {
+      "before": {
+        "usedPercent": 42,
+        "windowDurationMins": 10080,
+        "resetsAt": 1795563615
+      },
+      "checks": [
+        {
+          "done": 0,
+          "time": 1795328700.366088,
+          "meter": {
+            "usedPercent": 42,
+            "windowDurationMins": 10080,
+            "resetsAt": 1795563615
+          },
+          "load": [
+            2.77490234375,
+            4.3681640625,
+            5.26220703125
+          ]
+        },
+        {
+          "done": 100,
+          "time": 1795329455.723049,
+          "meter": {
+            "usedPercent": 43,
+            "windowDurationMins": 10080,
+            "resetsAt": 1795563615
+          },
+          "load": [
+            7.04541015625,
+            7.37255859375,
+            6.65869140625
+          ]
+        },
+        {
+          "done": 200,
+          "time": 1795330148.844872,
+          "meter": {
+            "usedPercent": 43,
+            "windowDurationMins": 10080,
+            "resetsAt": 1795563615
+          },
+          "load": [
+            12.7724609375,
+            13.0322265625,
+            9.54541015625
+          ]
+        },
+        {
+          "done": 300,
+          "time": 1795330854.148252,
+          "meter": {
+            "usedPercent": 44,
+            "windowDurationMins": 10080,
+            "resetsAt": 1795563615
+          },
+          "load": [
+            7.4111328125,
+            8.65380859375,
+            8.76171875
+          ]
+        },
+        {
+          "done": 400,
+          "time": 1795331786.801547,
+          "meter": {
+            "usedPercent": 45,
+            "windowDurationMins": 10080,
+            "resetsAt": 1795563615
+          },
+          "load": [
+            7.99755859375,
+            9.1357421875,
+            10.0126953125
+          ]
+        },
+        {
+          "done": 500,
+          "time": 1795332586.461927,
+          "meter": {
+            "usedPercent": 46,
+            "windowDurationMins": 10080,
+            "resetsAt": 1795563615
+          },
+          "load": [
+            4.64013671875,
+            8.84716796875,
+            9.9619140625
+          ]
+        }
+      ]
+    }
+  },
+  "prices": {
+    "gpt-6.2-sol": {
+      "input": 2.0,
+      "cached": 0.1,
+      "write": 2.5,
+      "output": 10.0
+    }
+  },
+  "price_date": "2026-11-22",
+  "price_source": "https://developers.openai.com/api/docs/pricing"
+}
