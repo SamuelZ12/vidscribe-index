@@ -53,10 +53,79 @@ This resumes the recorded experiment. To take fresh measurements, use a separate
 | ffmpeg-transcript | 100 | 100 | 444 | 100 | 48 | 17 | 0 / 0 / 0 | 0 | 0 / 0 / 0 |
 | ffmpeg-guided | 300 | 300 | 2733 | 300 | 243 | 47 | 255 / 46 / 2 | 300 | 0 / 0 / 0 |
 
+## Long videos, overall
+
+| Arm | Score % [95% interval] | API $/question | Seconds/question |
+|---|---:|---:|---:|
+| vidscribe | 98.1 [94.4, 100.0] | 0.0878 [0.0678, 0.1108] | 186.9 [151.8, 234.1] |
+| ffmpeg-guided | 98.1 [94.4, 100.0] | 0.1030 [0.0988, 0.1079] | 215.1 [183.6, 259.8] |
+| ffmpeg-transcript | 98.1 [94.4, 100.0] | 0.0555 [0.0502, 0.0608] | 185.0 [152.9, 229.4] |
+| stock | 91.7 [85.2, 97.2] | 0.1101 [0.0918, 0.1312] | 64.8 [56.5, 72.8] |
+
+| Difference | Score (pp) | $/question | Seconds/question |
+|---|---:|---:|---:|
+| ffmpeg-transcript minus vidscribe | 0.0 [0.0, 0.0] | -0.0323 [-0.0515, -0.0165] | -1.9 [-6.0, 2.1] |
+| ffmpeg-guided minus vidscribe | 0.0 [0.0, 0.0] | 0.0153 [-0.0070, 0.0340] | 28.1 [21.5, 33.5] |
+| ffmpeg-guided minus ffmpeg-transcript | 0.0 [0.0, 0.0] | 0.0476 [0.0413, 0.0554] | 30.1 [25.6, 34.1] |
+| ffmpeg-transcript minus stock | 6.5 [2.8, 10.2] | -0.0546 [-0.0724, -0.0377] | 120.2 [88.1, 158.5] |
+| ffmpeg-guided minus stock | 6.5 [2.8, 10.2] | -0.0071 [-0.0276, 0.0115] | 150.3 [118.7, 190.0] |
+
+| Arm | v1 | v2 | v3 | v4 | mixed | speech | hard |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| vidscribe | 100.0% | 100.0% | 100.0% | 100.0% | 83.3% | 100.0% | 100.0% |
+| ffmpeg-guided | 100.0% | 100.0% | 100.0% | 100.0% | 83.3% | 100.0% | 100.0% |
+| ffmpeg-transcript | 100.0% | 100.0% | 100.0% | 100.0% | 83.3% | 100.0% | 100.0% |
+| stock | 100.0% | 100.0% | 100.0% | 100.0% | 83.3% | 41.7% | 100.0% |
+
+| Paired score difference (pp) | v1 | v2 | v3 | v4 | mixed | speech | hard |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| ffmpeg-transcript minus vidscribe | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] |
+| ffmpeg-guided minus vidscribe | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] |
+| ffmpeg-guided minus ffmpeg-transcript | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] |
+
+## Long videos, long-dev
+
+| Arm | Score % [95% interval] | API $/question | Seconds/question |
+|---|---:|---:|---:|
+| vidscribe | 98.1 [94.4, 100.0] | 0.0878 [0.0678, 0.1108] | 186.9 [151.8, 234.1] |
+| ffmpeg-guided | 98.1 [94.4, 100.0] | 0.1030 [0.0988, 0.1079] | 215.1 [183.6, 259.8] |
+| ffmpeg-transcript | 98.1 [94.4, 100.0] | 0.0555 [0.0502, 0.0608] | 185.0 [152.9, 229.4] |
+| stock | 91.7 [85.2, 97.2] | 0.1101 [0.0918, 0.1312] | 64.8 [56.5, 72.8] |
+
+| Difference | Score (pp) | $/question | Seconds/question |
+|---|---:|---:|---:|
+| ffmpeg-transcript minus vidscribe | 0.0 [0.0, 0.0] | -0.0323 [-0.0515, -0.0165] | -1.9 [-6.0, 2.1] |
+| ffmpeg-guided minus vidscribe | 0.0 [0.0, 0.0] | 0.0153 [-0.0070, 0.0340] | 28.1 [21.5, 33.5] |
+| ffmpeg-guided minus ffmpeg-transcript | 0.0 [0.0, 0.0] | 0.0476 [0.0413, 0.0554] | 30.1 [25.6, 34.1] |
+| ffmpeg-transcript minus stock | 6.5 [2.8, 10.2] | -0.0546 [-0.0724, -0.0377] | 120.2 [88.1, 158.5] |
+| ffmpeg-guided minus stock | 6.5 [2.8, 10.2] | -0.0071 [-0.0276, 0.0115] | 150.3 [118.7, 190.0] |
+
+| Arm | v1 | v2 | v3 | v4 | mixed | speech | hard |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| vidscribe | 100.0% | 100.0% | 100.0% | 100.0% | 83.3% | 100.0% | 100.0% |
+| ffmpeg-guided | 100.0% | 100.0% | 100.0% | 100.0% | 83.3% | 100.0% | 100.0% |
+| ffmpeg-transcript | 100.0% | 100.0% | 100.0% | 100.0% | 83.3% | 100.0% | 100.0% |
+| stock | 100.0% | 100.0% | 100.0% | 100.0% | 83.3% | 41.7% | 100.0% |
+
+| Paired score difference (pp) | v1 | v2 | v3 | v4 | mixed | speech | hard |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| ffmpeg-transcript minus vidscribe | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] |
+| ffmpeg-guided minus vidscribe | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] |
+| ffmpeg-guided minus ffmpeg-transcript | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] | 0.0 [0.0, 0.0] |
+
+| Arm | Sessions | With pictures | Image returns | Tiling requested | Dense sampling requested | Crop requested | Named map / burst / crop viewed | Guide returned | Errors / timeout / no answer |
+|---|---:|---:|---:|---:|---:|---:|---|---:|---|
+| vidscribe | 54 | 54 | 594 | 0 | 9 | 0 | 53 / 8 / 0 | 0 | 0 / 0 / 0 |
+| ffmpeg-guided | 54 | 54 | 362 | 54 | 36 | 11 | 29 / 1 / 0 | 54 | 0 / 0 / 0 |
+| ffmpeg-transcript | 54 | 54 | 213 | 39 | 2 | 11 | 0 / 0 / 0 | 0 | 0 / 0 / 0 |
+| stock | 54 | 54 | 557 | 53 | 1 | 13 | 0 / 0 / 1 | 0 | 0 / 0 / 0 |
+
 Intervals use 10,000 fixed-seed paired resamples. The public panel resamples questions after averaging attempts within each question. The long panel averages the nine question scores within each video and resamples whole videos. Each split has only six videos. Intervals including zero leave gains and losses possible. No equivalence margin was specified. The same-code public baseline estimated a 3.92-point rerun threshold for two three-attempt means.
 
 An image return is an image payload delivered to the model. One contact sheet counts once even if it contains 16 frames. Named-sheet views require a matching file name in the call that returned an image. Loops or renamed files can escape that count. Dense and crop requests count sessions with matching tool-call text, including commands that could fail. A returned guide means its contents appeared in tool output. Reading the guide alone cannot demonstrate compliance with every step.
 
-Account-wide weekly meter: 52% at opening, 56% at the latest recorded checkpoint. Other account activity cannot be separated.
+Account-wide weekly meter: 52% at opening, 58% at the latest recorded checkpoint. Other account activity cannot be separated.
 
 dev: 400/400 rollout contexts confirm the expected CLI, model, effort, sandbox and network policy. 0 sessions lack token usage.
+
+long-dev: 216/216 rollout contexts confirm the expected CLI, model, effort, sandbox and network policy. 0 sessions lack token usage.
