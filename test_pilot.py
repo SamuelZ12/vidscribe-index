@@ -2,6 +2,9 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
+
+import runner
 
 from pilot import write_json
 from runner import finished
@@ -27,3 +30,12 @@ class PilotTests(unittest.TestCase):
             for status in ('ok', 'timeout', 'error', 'no_answer'):
                 write_json(path, {'status': status})
                 self.assertTrue(finished(path))
+
+            item = SimpleNamespace(item_id='example')
+            with patch.object(runner, 'RUNS', Path(d)), patch.object(runner, 'items', return_value=[item]):
+                for arm in runner.ARMS:
+                    write_json(runner.run_file(item, arm), {'status': 'error'})
+                with patch.object(runner, 'one') as launch, patch.object(runner, 'weekly') as meter:
+                    runner.run()
+                    launch.assert_not_called()
+                    meter.assert_not_called()
