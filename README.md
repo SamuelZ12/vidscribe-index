@@ -1,30 +1,35 @@
 # vidscribe-index
 
-Private harness that scores [vidscribe](https://github.com/SamuelZ12/vidscribe) on public video benchmarks, run through a real coding agent (Codex CLI on a ChatGPT subscription).
+Measure vidscribe quality, API-equivalent dollars and seconds per question on a frozen Video-Index v1.1 development panel. The local runner uses Samuel's ChatGPT login on the Mini, ffmpeg, ffprobe, uv and the host's installed vidscribe speech model. It keeps media, questions and attempt records under ignored directories. Only aggregate scores leave the machine.
 
-Status: pilot. First component: Video-Index v1.1 (144 questions). Benchmark videos, questions and answer keys are not committed; most are licensed for research use only.
+## Reproduce the baseline
 
-## Run the pilot on the Mini
-
-From a fresh checkout, with Codex logged in using ChatGPT, the vidscribe checkout at
-`~/dev/vidscribe`, its speech model installed, ffmpeg on PATH, and uv installed:
+Use the tagged harness and a clean vidscribe checkout at `7a119b4786de`. From the harness directory:
 
 ```sh
-uv run --python 3.13 pilot.py fetch
-uv run --python 3.13 pilot.py prepare
-uv run --python 3.13 pilot.py run
-uv run --python 3.13 pilot.py report
+uv run --python 3.13 baseline.py fetch
+uv run --python 3.13 baseline.py prepare
+uv run --python 3.13 baseline.py baseline
+uv run --python 3.13 baseline.py report
+uv run --python 3.13 baseline.py compare base stock
 uv run --python 3.13 python -m unittest -v
 ```
 
-Fetch verifies each video's content hash against the pinned dataset. Prepare runs
-speech recognition on the host, once per item, then run gives each session a
-private copy of its arm's inputs. Run skips all completed statuses, including
-failures. Use a fresh harness checkout for a new measurement, including after
-changing vidscribe. Keep the vidscribe checkout clean at the intended commit.
-Local inputs and per-session records live in ignored `data/` and `runs/`.
-Prepared media lives in `/private/tmp/clip-*` and session workspaces in
-`~/Movies/clip-*`. Report fetches the pinned keys into memory after all runs and prints Markdown.
-The measured pilot and the review of its rollouts are in [the pilot report](docs/pilot-report.md).
-During preparation, `pilot.py run --ready` runs only sessions with finished media.
-A subsequent `pilot.py run` finishes the remaining sessions.
+Fetch hash-checks 100 dev videos. Prepare runs host speech and frame extraction once per item and vidscribe revision. A single run interleaves the three baseline sets with a fixed shuffle, runs up to four sessions at once and reads the weekly account meter every 100 completed sessions. Account movement above 15 points or a weekly reset interrupts the run. The meter includes other account activity. Repeating the baseline command skips all final records, including failures. A new harness clone creates fresh attempts. Keep the measured checkout and its ignored `runs/` directory for paired comparisons.
+
+The 20 original pilot items are all in dev. The 100/44 assignment uses distinct videos and proportional capability × audio counts. Starting with the pilot IDs, the split generator shuffled each joint stratum with seed 20261122, then assigned the next item from the stratum furthest below its target (sorted stratum order breaks ties). The tracked ID manifest and its digest freeze the assignment.
+
+## Measure a changed revision
+
+With the changed code committed in a clean worktree at `../vidscribe-change`, run these commands from the same harness checkout as the baseline:
+
+```sh
+uv run --python 3.13 baseline.py prepare --vidscribe ../vidscribe-change
+uv run --python 3.13 baseline.py run change-01 --vidscribe ../vidscribe-change --arm vidscribe --attempts 3
+uv run --python 3.13 baseline.py compare change-01 base
+uv run --python 3.13 baseline.py report base stock transcript change-01
+```
+
+Use a new set name per change. Positive paired accuracy and negative paired dollars or seconds favor the first set. A confidence interval crossing zero leaves the direction unresolved. The Pareto charts connect the undominated point estimates. Report regenerates the Markdown, JSON and self-contained HTML in `docs/`. Pricing happens at report time.
+
+The [pilot report](docs/pilot-report.md) and original pilot records remain available. See the [baseline spec](docs/baseline-spec.md) for the measurement contract.

@@ -13,7 +13,11 @@ from pilot import DATA, ROOT, Item, download_videos, rows, write_json
 
 
 def panel():
-    return [Item(**row) for row in json.loads((DATA / 'dev.json').read_text())]
+    items = [Item(**row) for row in json.loads((DATA / 'dev.json').read_text())]
+    expected = json.loads((ROOT / 'split.json').read_text())['dev']
+    if sorted(i.item_id for i in items) != expected:
+        raise ValueError('Dev metadata does not match frozen split. Run fetch.')
+    return items
 
 
 def fetch():

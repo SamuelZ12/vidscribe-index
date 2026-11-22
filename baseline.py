@@ -53,7 +53,6 @@ def settings(name, arm, checkout, attempts, revision):
         harness = 'HEAD'
     if subprocess.call(['git', '-C', ROOT, 'diff', '--quiet', harness, '--', '*.py','split.json']):
         raise ValueError('Measuring code differs from harness tag')
-    clean(ROOT)
     return RunSet(name, arm, str(checkout), revision, subprocess.check_output(
         ['git','-C',ROOT,'rev-parse',harness+'^{commit}'], text=True).strip(), attempts,
         subprocess.check_output(['codex','--version'],text=True).strip())
@@ -158,8 +157,7 @@ def main():
                 if (args.name,args.arm,args.attempts) not in presets:
                     raise ValueError('Reserved baseline set settings')
                 # All baseline attempts share one quota window.
-                sets = [(args.name,args.arm,args.attempts)]
-                spec = settings(*sets[0][:2], checkout, args.attempts, revision)
+                spec = settings(args.name, args.arm, checkout, args.attempts, revision)
                 if pending(spec, panel()):
                     raise ValueError('Launch unfinished baseline sets together with baseline')
                 print('0 pending')
