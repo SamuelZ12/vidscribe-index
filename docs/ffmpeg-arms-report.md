@@ -10,6 +10,10 @@ The account-wide weekly meter opened at 52%. The first canary actually denied th
 
 Public sessions interleave the two new arms with a fixed shuffle and four workers. The historical arms retain their original measurements. The two ffmpeg arms use the full cached processing charge because timing transcript-only runs would require retranscribing 34.7 hours of audio in the public panel alone. This overstates latency for transcript delivery. API-equivalent dollars cover the answer session, excluding grading. Seconds cover agent execution and host processing, excluding downloading, setup and queueing.
 
+## Download verification
+
+All 12 videos downloaded. The Food Network video returned HTTP 403 on its first attempt and succeeded with the same command on retry. I inspected one reference moment per video at full frame size. Eleven showed the expected detail at the recorded second. The podcast was in a card transition at that second, and the expected detail was legible one second later within the recorded visible span. This checks one moment per video.
+
 ## Reproduce
 
 On this Mini, the frozen public preparation cache and the original 500 control records are in ignored local directories. From the prototype branch:
