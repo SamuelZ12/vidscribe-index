@@ -16,13 +16,14 @@ The prompts for each setup are in [`arms.py`](arms.py) and [`pilot.py`](pilot.py
 
 - [Full run](docs/full-report.md): all 144 questions of [Video-Index v1.1](https://github.com/Espere-1119-Song/Video-Index), three attempts per setup, 2,160 sessions. Summary numbers are in [`docs/full-summary.json`](docs/full-summary.json).
 - [Long talks](docs/ffmpeg-arms-report.md): 108 free-text questions on 12 long YouTube videos, graded blind. The questions are in [`long-questions/`](long-questions/).
+- [Gemini 3.8 Flash agentic vs. Codex with vidscribe and ffmpeg](docs/gemini-agentic.md): the same 108 long-video questions, with [both answers and grades for each question](docs/gemini-agentic-results.csv).
 - [Baseline](docs/baseline-report.md) and [pilot](docs/pilot-report.md): the earlier runs on the first 100 questions.
 
-Every run used Codex CLI 0.169.0 with `gpt-6.2-sol` at medium effort, on a ChatGPT subscription. Dollars are computed from each request's token counts at API list prices ([`results.py`](results.py)).
+The Codex answer runs used Codex CLI 0.169.0 with `gpt-6.2-sol` at medium effort, on a ChatGPT subscription. Dollars are computed from each request's token counts at API list prices ([`results.py`](results.py)).
 
 ## What this repository does not contain
 
-No Video-Index videos, questions or answer keys, and no per-question results. `fetch` downloads the videos from the [Hugging Face dataset](https://huggingface.co/datasets/Video-Index/Video-Index-v1-1) at a pinned revision. The report scripts read the answer key from the same revision at report time and never write it to disk. Video-Index items keep the licences of their source benchmarks, several of them non-commercial. [`split.json`](split.json) lists only item IDs.
+No videos, questions, answer keys or per-question results from the third-party Video-Index dataset. `fetch` downloads the videos from the [Hugging Face dataset](https://huggingface.co/datasets/Video-Index/Video-Index-v1-1) at a pinned revision. The report scripts read the answer key from the same revision at report time and never write it to disk. Video-Index items keep the licences of their source benchmarks, several of them non-commercial. [`split.json`](split.json) lists only item IDs.
 
 ## Rerun the full panel
 
